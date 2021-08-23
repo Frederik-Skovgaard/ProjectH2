@@ -10,7 +10,7 @@ namespace ProjectH2.Repository.Model
     {
     }
 
-    class Image
+    public class Image
     {
 
     }
