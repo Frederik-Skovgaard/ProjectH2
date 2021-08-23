@@ -7,7 +7,7 @@ using ProjectH2.Repository.Model;
 
 namespace ProjectH2.Repository.Controller
 {
-
+    //TODO: add properties to entry
     public class Entry
     {
         //Entry propertys
@@ -38,6 +38,8 @@ namespace ProjectH2.Repository.Controller
 
     }
 
+    //TODO: Make Contructor for blog post
+
     //Create Blog post
     class BlogPost : Entry
     {
@@ -56,6 +58,8 @@ namespace ProjectH2.Repository.Controller
         }
     }
 
+    //TODO: Make Contructor for frame work review
+
     //Create Frame work review
     class FrameworkReview : Entry
     {
@@ -72,6 +76,8 @@ namespace ProjectH2.Repository.Controller
             Language = language;
         }
     }
+
+    //TODO: Make Contructor for reference
 
     //Create a reference
     class Reference : Entry
