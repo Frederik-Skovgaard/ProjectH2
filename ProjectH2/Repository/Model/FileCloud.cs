@@ -4,30 +4,26 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectH2.Repository.Controller;
 
 namespace ProjectH2.Repository.Model
 {
     public class FileCloud
     {
-        //File & Path
-        public string Path => file.Path;
-        public File CloudFile => file;
-        public List<File> FileList => file.FileList;
+        //File
+        public Street Street { get; set; }
+        public List<File> File => file.FileList;
 
-        private File file;
-
-       
-
-
+        private File file;        
 
 
     }
 
     //File class
-    public class File
+    public class File : FileCloud
     {
         //File proparty
-        public string Nmae => name;
+        public string Name => name;
         public string Language => language;
         public string MD5 => md5sum;
         public string Path => path;
@@ -37,15 +33,26 @@ namespace ProjectH2.Repository.Model
         private string md5sum;
         private string path;
 
-        //File List
         public List<File> FileList => fileList;
         private List<File> fileList;
 
-        public File()
-        {
 
+        public File(string name_, string language_, string path_, Street street)
+        {
+            name = name_;
+            language = language_;
+            path = path_;
+
+            Street = street;
+
+            fileList.Add(new File(name, language, path, Street));
         }
 
-
+        //Find file by name
+        public File FindFile(string name)
+        {
+            File file = FileList.Find(x => x.name == name);
+            return file;
+        }
     }
 }

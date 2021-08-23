@@ -7,7 +7,7 @@ using ProjectH2.Repository.Model;
 
 namespace ProjectH2.Repository.Controller
 {
-
+    public enum Street { BlogPost, FrameworkReview, Reference}
     public class Entry
     {
         //Entry propertys
@@ -43,7 +43,7 @@ namespace ProjectH2.Repository.Controller
     {
         
 
-        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, Image image, File file, Tag tag, Language language)
+        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, Image image, File file, Tag tag, Language language, bool active)
         {
             Text = text;
             HeadLine = headLine;
@@ -53,6 +53,7 @@ namespace ProjectH2.Repository.Controller
             File = file;
             Tag = tag;
             Language = language;
+            Active = active;
         }
     }
 
@@ -60,7 +61,7 @@ namespace ProjectH2.Repository.Controller
     class FrameworkReview : Entry
     {
 
-        public FrameworkReview(string text, Image image, int nummberOfStar, string link, string headLine, File file, Tag tag, Language language)
+        public FrameworkReview(string text, Image image, int nummberOfStar, string link, string headLine, File file, Tag tag, Language language, bool active)
         {
             Text = text;
             Image = image;
@@ -70,19 +71,21 @@ namespace ProjectH2.Repository.Controller
             File = file;
             Tag = tag;
             Language = language;
+            Active = active;
         }
     }
 
     //Create a reference
     class Reference : Entry
     {
-        public Reference(string text, Image image, File file, Tag tag, Language language)
+        public Reference(string text, Image image, File file, Tag tag, Language language, bool active)
         {
             Text = text;
             Image = image;
             File = file;
             Tag = tag;
             Language = language;
+            Active = active;
         }
     }
 }
