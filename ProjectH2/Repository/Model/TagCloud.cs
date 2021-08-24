@@ -30,13 +30,19 @@ namespace ProjectH2.Repository.Model
         private string name;
         private string description;
 
+
         /// <summary>
         /// Constructor for making tags
         /// </summary>
         /// <param name="name_"></param>
-        public Tag(string name_)
-        {
-            name = name_;
-        }
+        public Tag(string name_) { name = name_; }
+
+        /// <summary>
+        /// Method for find tags
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Tag FindTag(Tag tag, string name) { tag = TagList.Find(x => x.Name == name); return tag; }
     }
 }

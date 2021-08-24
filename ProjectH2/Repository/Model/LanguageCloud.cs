@@ -29,17 +29,19 @@ namespace ProjectH2.Repository.Model
         private string reference;
 
 
-        //Add Language
-        public Language(string name_, string reference_)
-        {
-            reference = reference_;
-            name = name_;
-        }
+        /// <summary>
+        /// Add Language
+        /// </summary>
+        /// <param name="name_"></param>
+        /// <param name="reference_"></param>
+        public Language(string name_, string reference_) { reference = reference_; name = name_; }
 
-        public Language FindLanguage(Language language, string name)
-        {
-            language = languages.Find(x => x.Name == name);
-            return language;
-        }
+        /// <summary>
+        /// Method for finding languages
+        /// </summary>
+        /// <param name="language"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Language FindLanguage(Language language, string name) { language = languages.Find(x => x.Name == name); return language; }
     }
 }

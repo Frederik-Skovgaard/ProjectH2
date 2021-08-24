@@ -37,7 +37,13 @@ namespace ProjectH2.Repository.Model
         public List<File> FileList => fileList;
         private List<File> fileList;
 
-
+        /// <summary>
+        /// Constructor for adding languages to entry
+        /// </summary>
+        /// <param name="name_"></param>
+        /// <param name="language_"></param>
+        /// <param name="path_"></param>
+        /// <param name="street"></param>
         public File(string name_, string language_, string path_, Street street)
         {
             name = name_;
@@ -49,11 +55,11 @@ namespace ProjectH2.Repository.Model
             fileList.Add(new File(name, language, path, Street));
         }
 
-        //Find file by name
-        public File FindFile(string name)
-        {
-            File file = FileList.Find(x => x.Name == name);
-            return file;
-        }
+        /// <summary>
+        /// Method for finding files
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public File FindFile(string name) { File file = FileList.Find(x => x.Name == name); return file; }
     }
 }

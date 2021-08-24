@@ -36,7 +36,16 @@ namespace ProjectH2.Repository.Controller
 
 
 
-        //Contract construckter
+        /// <summary>
+        /// Construtor for adding contact information
+        /// </summary>
+        /// <param name="fName"></param>
+        /// <param name="lName"></param>
+        /// <param name="address"></param>
+        /// <param name="addressNr"></param>
+        /// <param name="phoneNr"></param>
+        /// <param name="emailAddress"></param>
+        /// <param name="linkedinLink"></param>
         public Contact(string fName, string lName, string address, int addressNr, string phoneNr, string emailAddress, string linkedinLink)
         {
             //Contact Name

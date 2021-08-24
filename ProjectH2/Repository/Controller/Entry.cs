@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProjectH2.Repository.Model;
+using ProjectH2.Interfaces;
 
 namespace ProjectH2.Repository.Controller
 {
     public enum Street { BlogPost, FrameworkReview, Reference}
 
 
-    public class Entry
+    class Entry : IEntry
     {
         //Entry propertys
         #region Entry prop
-        public string FullName => Contact.FullName;
+        public string Name { get; set; }
         public DateTime Date { get; set; }
         public bool Active { get; set; }
         public string HeadLine { get; set; }
@@ -32,10 +33,6 @@ namespace ProjectH2.Repository.Controller
         public string Link { get; set; }
         public int NummberOfStart { get; set; }
 
-
-        private Contact Contact;
-        private int nummberOfStar;
-
         #endregion
     }
 
@@ -44,7 +41,18 @@ namespace ProjectH2.Repository.Controller
     class BlogPost : Entry
     {
         
-
+        /// <summary>
+        /// Contrutor for adding a blog post
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="headLine"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="image"></param>
+        /// <param name="file"></param>
+        /// <param name="tag"></param>
+        /// <param name="language"></param>
+        /// <param name="active"></param>
         public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, Image image, File file, Tag tag, Language language, bool active)
         {
             Text = text;
@@ -62,7 +70,18 @@ namespace ProjectH2.Repository.Controller
     //Create Frame work review
     class FrameworkReview : Entry
     {
-
+        /// <summary>
+        /// Contrutor for adding a framework review
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="image"></param>
+        /// <param name="nummberOfStar"></param>
+        /// <param name="link"></param>
+        /// <param name="headLine"></param>
+        /// <param name="file"></param>
+        /// <param name="tag"></param>
+        /// <param name="language"></param>
+        /// <param name="active"></param>
         public FrameworkReview(string text, Image image, int nummberOfStar, string link, string headLine, File file, Tag tag, Language language, bool active)
         {
             Text = text;
@@ -79,7 +98,15 @@ namespace ProjectH2.Repository.Controller
     //Create a reference
     class Reference : Entry
     {
-
+        /// <summary>
+        /// Construtor for making a reference
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="image"></param>
+        /// <param name="file"></param>
+        /// <param name="tag"></param>
+        /// <param name="language"></param>
+        /// <param name="active"></param>
         public Reference(string text, Image image, File file, Tag tag, Language language, bool active)
         {
             Text = text;
