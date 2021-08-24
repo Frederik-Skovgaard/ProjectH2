@@ -7,7 +7,7 @@ using ProjectH2.Repository.Controller;
 
 namespace ProjectH2.Repository.Model
 {
-    //TODO: Add properties to tag & tag cloud
+    
     class TagCloud
     {
         //Properties

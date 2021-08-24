@@ -9,10 +9,6 @@ namespace ProjectH2.Repository.Controller
 {
     public enum Street { BlogPost, FrameworkReview, Reference}
 
-    //TODO: Add properties to Entry
-    //TODO: Add blog post Class/constructer
-    //TODO: Add framework review Class/constructer
-    //TODO: Add reference Class/constructer
 
     public class Entry
     {
