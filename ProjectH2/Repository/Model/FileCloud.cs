@@ -8,6 +8,7 @@ using ProjectH2.Repository.Controller;
 
 namespace ProjectH2.Repository.Model
 {
+    //TODO: Add properties to file & file cloud
     public class FileCloud
     {
         //File

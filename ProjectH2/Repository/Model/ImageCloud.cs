@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectH2.Repository.Model
 {
+    //TODO: Add properties to image & image cloud
     class ImageCloud
     {
     }
