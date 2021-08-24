@@ -10,6 +10,7 @@ namespace ProjectH2.Repository.Model
 {
     public class LanguageCloud
     {
+        //Properties
         public Street Street { get; set; }
         public List<Language> Languages => languages;
 
