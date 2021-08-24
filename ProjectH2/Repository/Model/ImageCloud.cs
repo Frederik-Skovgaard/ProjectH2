@@ -15,6 +15,15 @@ namespace ProjectH2.Repository.Model
         public List<Image> ImList => image.ImageList;
 
         private Image image;
+
+
+        /// <summary>
+        /// Method for ading images
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Image FindImage(Image image, string name) { image = ImList.Find(x => x.Name == name); return image; }
     }
 
     public class Image : ImageCloud
@@ -38,14 +47,16 @@ namespace ProjectH2.Repository.Model
         /// <param name="description_"></param>
         /// <param name="path_"></param>
         /// <param name="stree"></param>
-        public Image(string name_, string description_, string path_, Street stree) { name = name_; decscription = description_; path = path_; }
+        public Image(string name_, string description_, string path_, Street stree) 
+        { 
+            name = name_; 
+            decscription = description_;
+            path = path_; 
+            Street = stree; 
+            
+            imageList.Add(new Image(name_, description_, path_, stree)); 
+        }
 
-        /// <summary>
-        /// Method for ading images
-        /// </summary>
-        /// <param name="image"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public Image FindImage(Image image, string name) { image = imageList.Find(x => x.name == name); return image; }
+        
     }
 }

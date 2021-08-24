@@ -8,13 +8,22 @@ using ProjectH2.Repository.Controller;
 namespace ProjectH2.Repository.Model
 {
     
-    class TagCloud
+    public class TagCloud
     {
         //Properties
         public Street street { get; set; }
         public List<Tag> TagsList => tag.TagList;
+        public int ListCount => tag.TagList.Count;
 
         private Tag tag;
+
+        /// <summary>
+        /// Method for find tags
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Tag FindTag(Tag tag, string name) { tag = TagsList.Find(x => x.Name == name); return tag; }
     }
 
     public class Tag
@@ -35,14 +44,7 @@ namespace ProjectH2.Repository.Model
         /// Constructor for making tags
         /// </summary>
         /// <param name="name_"></param>
-        public Tag(string name_) { name = name_; }
+        public Tag(string name_, string description_) { name = name_; description = description_; tagList.Add(new Tag(name_, description_)); }
 
-        /// <summary>
-        /// Method for find tags
-        /// </summary>
-        /// <param name="tag"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public Tag FindTag(Tag tag, string name) { tag = TagList.Find(x => x.Name == name); return tag; }
     }
 }

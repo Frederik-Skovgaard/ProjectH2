@@ -13,15 +13,21 @@ namespace ProjectH2.Repository.Model
     {
         //File
         public Street Street { get; set; }
-        public List<File> File => file.FileList;
+        public List<Files> File => file.FileList;
 
-        private File file;        
+        private Files file;
 
 
+        /// <summary>
+        /// Method for finding files
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Files FindFile(string name) { Files file = File.Find(x => x.Name == name); return file; }
     }
 
     //File class
-    public class File : FileCloud
+    public class Files : FileCloud
     {
         //File proparty
         public string Name => name;
@@ -34,8 +40,8 @@ namespace ProjectH2.Repository.Model
         private string md5sum;
         private string path;
 
-        public List<File> FileList => fileList;
-        private List<File> fileList;
+        public List<Files> FileList => fileList;
+        private List<Files> fileList;
 
         /// <summary>
         /// Constructor for adding languages to entry
@@ -44,7 +50,7 @@ namespace ProjectH2.Repository.Model
         /// <param name="language_"></param>
         /// <param name="path_"></param>
         /// <param name="street"></param>
-        public File(string name_, string language_, string path_, Street street)
+        public Files(string name_, string language_, string path_, Street street)
         {
             name = name_;
             language = language_;
@@ -52,14 +58,9 @@ namespace ProjectH2.Repository.Model
 
             Street = street;
 
-            fileList.Add(new File(name, language, path, Street));
+            fileList.Add(new Files(name_, language_, path_, street));
         }
 
-        /// <summary>
-        /// Method for finding files
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public File FindFile(string name) { File file = FileList.Find(x => x.Name == name); return file; }
+        
     }
 }

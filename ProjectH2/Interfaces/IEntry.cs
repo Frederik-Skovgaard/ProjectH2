@@ -20,10 +20,10 @@ namespace ProjectH2.Interfaces
         string Text { get; set; }
         DateTime StartDate { get; set; }
         DateTime EndDate { get; set; }
-        Image Image { get; set; }
-        File File { get; set; }
-        Tag Tag { get; set; }
-        Language Language { get; set; }
+        ImageCloud Image { get; set; }
+        FileCloud File { get; set; }
+        TagCloud Tag { get; set; }
+        LanguageCloud Language { get; set; }
 
 
         string Link { get; set; }

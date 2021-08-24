@@ -11,7 +11,7 @@ namespace ProjectH2.Repository.Controller
     public enum Street { BlogPost, FrameworkReview, Reference}
 
 
-    class Entry : IEntry
+    abstract class Entry : IEntry
     {
         //Entry propertys
         #region Entry prop
@@ -24,10 +24,10 @@ namespace ProjectH2.Repository.Controller
         public string Text { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public Image Image { get; set; }
-        public File File { get; set; }
-        public Tag Tag { get; set; }
-        public Language Language { get; set; }
+        public ImageCloud Image { get; set; }
+        public FileCloud File { get; set; }
+        public TagCloud Tag { get; set; }
+        public LanguageCloud Language { get; set; }
 
 
         public string Link { get; set; }
@@ -53,7 +53,7 @@ namespace ProjectH2.Repository.Controller
         /// <param name="tag"></param>
         /// <param name="language"></param>
         /// <param name="active"></param>
-        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, Image image, File file, Tag tag, Language language, bool active)
+        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, ImageCloud image, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
         {
             Text = text;
             HeadLine = headLine;
@@ -82,7 +82,7 @@ namespace ProjectH2.Repository.Controller
         /// <param name="tag"></param>
         /// <param name="language"></param>
         /// <param name="active"></param>
-        public FrameworkReview(string text, Image image, int nummberOfStar, string link, string headLine, File file, Tag tag, Language language, bool active)
+        public FrameworkReview(string text, ImageCloud image, int nummberOfStar, string link, string headLine, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
         {
             Text = text;
             Image = image;
@@ -107,7 +107,7 @@ namespace ProjectH2.Repository.Controller
         /// <param name="tag"></param>
         /// <param name="language"></param>
         /// <param name="active"></param>
-        public Reference(string text, Image image, File file, Tag tag, Language language, bool active)
+        public Reference(string text, ImageCloud image, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
         {
             Text = text;
             Image = image;
