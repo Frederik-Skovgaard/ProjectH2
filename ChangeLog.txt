@@ -1,16 +1,24 @@
 # Introduction
-Example textExample textExample textExample textExample textExample textExample textExample textExample text
-Example textExample textExample textExample text
-Example textExample textExample text
 
-# Changelog
+This is my H2 OOP back-end project.
+
+
+# Change log
 All notable changes to this project will be documented in this file.
 
 # [Unreleased]
-
-## [exmple] - Date
+## Version 1. - 24-08-2021
 ### Added
-- []
-### Removed
+- [x] Add properties to tag & tag cloud
+- [x] Add properties on language & language cloud
+- [x] Add properties to file & file cloud 
+- [x] Add properties to image & image cloud
+- [x] Add reference Class/constructer
+- [x] Add framework review Class/constructer
+- [x] Add blog post Class/constructer
+- [x] Add properties to Entry
+- [x] Add properties & constructor for contact class
 
-### Changed
+## Versin 2. - Date
+### Added
+- [ ] example
