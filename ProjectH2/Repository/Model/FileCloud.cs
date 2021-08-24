@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -13,9 +14,9 @@ namespace ProjectH2.Repository.Model
     {
         //File
         public Street Street { get; set; }
-        public List<Files> File => file.FileList;
+        public List<Files> FileList => fileList;
 
-        private Files file;
+        private List<Files> fileList = new List<Files>();
 
 
         /// <summary>
@@ -23,25 +24,24 @@ namespace ProjectH2.Repository.Model
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Files FindFile(string name) { Files file = File.Find(x => x.Name == name); return file; }
+        public Files FindFile(string name) { Files file = FileList.Find(x => x.Name == name); return file; }
     }
 
     //File class
-    public class Files : FileCloud
+    public class Files
     {
         //File proparty
         public string Name => name;
         public string Language => language;
-        public string MD5 => md5sum;
         public string Path => path;
+        public string MD5Sum => md5;
 
         private string name;
         private string language;
-        private string md5sum;
         private string path;
+        private string md5;
+        
 
-        public List<Files> FileList => fileList;
-        private List<Files> fileList;
 
         /// <summary>
         /// Constructor for adding languages to entry
@@ -50,17 +50,55 @@ namespace ProjectH2.Repository.Model
         /// <param name="language_"></param>
         /// <param name="path_"></param>
         /// <param name="street"></param>
-        public Files(string name_, string language_, string path_, Street street)
+        public Files(string name_, string language_, string path_)
         {
             name = name_;
             language = language_;
             path = path_;
 
-            Street = street;
+            md5 = CheckMD5(path_);
 
-            fileList.Add(new Files(name_, language_, path_, street));
+            SaveText();
         }
 
-        
+        /// <summary>
+        /// Method for adding files to text file
+        /// </summary>
+        public void SaveText()
+        {
+            string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.txt";
+
+            using (TextWriter tw = new StreamWriter(path, true))
+            {
+                if (!File.Exists(path))
+                {
+                    File.Create(path);
+                    tw.WriteLine($"{MD5Sum},{Name} (File)");
+                }
+                else
+                {
+                    tw.WriteLine($"{MD5Sum},{Name} (File)");
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Method for encrypting file and returning the converted hash as a string
+        /// </summary>
+        /// <param name="path_"></param>
+        /// <returns></returns>
+        public string CheckMD5(string path_)
+        {
+            using (MD5 md5Sm_ = MD5.Create())
+            {
+                //Open & Read file
+                using (FileStream stream = File.OpenRead(path_))
+                {
+                    byte[] hash = md5Sm_.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+        }
     }
 }

@@ -13,10 +13,9 @@ namespace ProjectH2.Repository.Model
     {
         //Properties
         public Street street { get; set; }
-        public List<Tag> TagsList => tag.TagList;
-        public int ListCount => tag.TagList.Count;
-
-        private Tag tag;
+        public List<Tag> TagsList => tagList;
+        private List<Tag> tagList;
+        
 
         /// <summary>
         /// Method for find tags
@@ -29,10 +28,6 @@ namespace ProjectH2.Repository.Model
 
     public class Tag
     {
-        //Tag List
-        public List<Tag> TagList => tagList;
-        private List<Tag> tagList;
-
         //Properties
         public string Name => name;
         public string Description => description;
@@ -47,7 +42,9 @@ namespace ProjectH2.Repository.Model
         /// <param name="name_"></param>
         public Tag(string name_, string description_) { name = name_; description = description_; SaveText(); }
 
-
+        /// <summary>
+        /// Method for adding tags to text file
+        /// </summary>
         public void SaveText()
         {
             string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.txt";
@@ -56,11 +53,11 @@ namespace ProjectH2.Repository.Model
                 if (!File.Exists(path))
                 {
                     File.Create(path);
-                    tw.WriteLine($"(Tag) Name: {Name} | Description: {Description}");
+                    tw.WriteLine($"{Name},{Description} (Tag)");
                 }
                 else
                 {
-                    tw.WriteLine($"(Tag) Name: {Name} | Description: {Description}");
+                    tw.WriteLine($"{Name},{Description} (Tag)");
                 }
             }
         }

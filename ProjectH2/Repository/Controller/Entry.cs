@@ -3,22 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectH2.Interfaces;
 using ProjectH2.Repository.Model;
 
 namespace ProjectH2.Repository.Controller
 {
     public enum Street { BlogPost, FrameworkReview, Reference}
 
-    //TODO: Add properties to Entry
-    //TODO: Add blog post Class/constructer
-    //TODO: Add framework review Class/constructer
-    //TODO: Add reference Class/constructer
-
-    public class Entry
+    public class Entry : IEntry
     {
         //Entry propertys
         #region Entry prop
-        public string FullName { get; set; }
+        public string Name { get; set; }
         public DateTime Date { get; set; }
         public bool Active { get; set; }
         public string HeadLine { get; set; }
@@ -27,10 +23,10 @@ namespace ProjectH2.Repository.Controller
         public string Text { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public Image Image { get; set; }
-        public Files File { get; set; }
-        public Tag Tag { get; set; }
-        public Language Language { get; set; }
+        public ImageCloud Image { get; set; }
+        public FileCloud File { get; set; }
+        public TagCloud Tag { get; set; }
+        public LanguageCloud Language { get; set; }
 
 
         public string Link { get; set; }
@@ -46,7 +42,7 @@ namespace ProjectH2.Repository.Controller
     {
         
 
-        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, Image image, Files file, Tag tag, Language language, bool active)
+        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, ImageCloud image, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
         {
             Text = text;
             HeadLine = headLine;
@@ -64,7 +60,7 @@ namespace ProjectH2.Repository.Controller
     class FrameworkReview : Entry
     {
 
-        public FrameworkReview(string text, Image image, int nummberOfStar, string link, string headLine, Files file, Tag tag, Language language, bool active)
+        public FrameworkReview(string text, ImageCloud image, int nummberOfStar, string link, string headLine, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
         {
             Text = text;
             Image = image;
@@ -81,7 +77,7 @@ namespace ProjectH2.Repository.Controller
     class Reference : Entry
     {
 
-        public Reference(string text, Image image, Files file, Tag tag, Language language, bool active)
+        public Reference(string text, ImageCloud image, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
         {
             Text = text;
             Image = image;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,56 +8,58 @@ using ProjectH2.Repository.Controller;
 
 namespace ProjectH2.Repository.Model
 {
-    
     public class ImageCloud
     {
-        //ImageCloud Properity
-        public Street Street { get; set; }
-        public List<Image> ImList => image.ImageList;
+        public Street street { get; set; }
+        public List<Image> ImageList => ImageList;
 
-        private Image image;
+        private List<Image> imageList;
 
-
-        /// <summary>
-        /// Method for ading images
-        /// </summary>
-        /// <param name="image"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public Image FindImage(Image image, string name) { image = ImList.Find(x => x.Name == name); return image; }
+        public Image FindImage(Image image, string name_) { image = ImageList.Find(x => x.Name == name_); return image; }
     }
 
-    public class Image : ImageCloud
+
+    public class Image
     {
-        //Image properties
         public string Name => name;
-        public string Description => decscription;
+        public string Description => description;
         public string Path => path;
 
         private string name;
-        private string decscription;
+        private string description;
         private string path;
 
-        public List<Image> ImageList => imageList;
-        private List<Image> imageList;
+       
 
-        /// <summary>
-        /// Contrutor for adding images to entry
-        /// </summary>
-        /// <param name="name_"></param>
-        /// <param name="description_"></param>
-        /// <param name="path_"></param>
-        /// <param name="stree"></param>
-        public Image(string name_, string description_, string path_, Street stree) 
-        { 
-            name = name_; 
-            decscription = description_;
-            path = path_; 
-            Street = stree; 
-            
-            imageList.Add(new Image(name_, description_, path_, stree)); 
+        public Image(string name_, string description_, string path_)
+        {
+            name = name_;
+            description = description_;
+            path = path_;
+
+            SaveText();
         }
 
-        
+        /// <summary>
+        /// Method for adding images to text file
+        /// </summary>
+        public void SaveText()
+        {
+            string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.txt";
+
+            using (TextWriter tw = new StreamWriter(path, true))
+            {
+                if (!File.Exists(path))
+                {
+                    File.Create(path);
+                    tw.WriteLine($"{name},{Path} (Image)");
+                }
+                else
+                {
+                    tw.WriteLine($"{name},{Path} (Image)");
+                }
+            }
+        }
+
     }
 }
