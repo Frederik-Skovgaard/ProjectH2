@@ -13,7 +13,7 @@ namespace ProjectH2.Repository.Model
         public Street street { get; set; }
         public List<Image> ImageList => ImageList;
 
-        private List<Image> imageList;
+        private List<Image> imageList = new List<Image>();
 
         public Image FindImage(Image image, string name_) { image = ImageList.Find(x => x.Name == name_); return image; }
     }
@@ -52,11 +52,11 @@ namespace ProjectH2.Repository.Model
                 if (!File.Exists(path))
                 {
                     File.Create(path);
-                    tw.WriteLine($"{name},{Path} (Image)");
+                    tw.WriteLine($"{Name},{Description},{Path} (Image)");
                 }
                 else
                 {
-                    tw.WriteLine($"{name},{Path} (Image)");
+                    tw.WriteLine($"{Name},{Description},{Path} (Image)");
                 }
             }
         }

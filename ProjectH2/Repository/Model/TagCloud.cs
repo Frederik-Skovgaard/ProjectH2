@@ -14,7 +14,7 @@ namespace ProjectH2.Repository.Model
         //Properties
         public Street street { get; set; }
         public List<Tag> TagsList => tagList;
-        private List<Tag> tagList;
+        private List<Tag> tagList = new List<Tag>();
         
 
         /// <summary>

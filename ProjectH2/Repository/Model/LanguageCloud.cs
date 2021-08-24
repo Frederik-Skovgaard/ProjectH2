@@ -13,7 +13,7 @@ namespace ProjectH2.Repository.Model
         public Street Street { get; set; }
         public List<Language> Languages => languages;
 
-        private List<Language> languages;
+        private List<Language> languages = new List<Language>();
 
         /// <summary>
         /// Method for finding language
