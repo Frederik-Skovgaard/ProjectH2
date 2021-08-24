@@ -7,6 +7,7 @@ using ProjectH2.Repository.Controller;
 
 namespace ProjectH2.Repository.Model
 {
+    //TODO: Add properties on language & languageCloud
     class LanguageCloud
     {
         public Street Street { get; set; }
