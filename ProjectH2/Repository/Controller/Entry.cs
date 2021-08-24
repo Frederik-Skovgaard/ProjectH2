@@ -76,7 +76,7 @@ namespace ProjectH2.Repository.Controller
     //Create a reference
     class Reference : Entry
     {
-
+        
         public Reference(string text, ImageCloud image, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
         {
             Text = text;
@@ -86,6 +86,7 @@ namespace ProjectH2.Repository.Controller
             Language = language;
             Active = active;
         }
+
 
         
     }
