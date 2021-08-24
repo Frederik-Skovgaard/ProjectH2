@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,7 +45,25 @@ namespace ProjectH2.Repository.Model
         /// Constructor for making tags
         /// </summary>
         /// <param name="name_"></param>
-        public Tag(string name_, string description_) { name = name_; description = description_; tagList.Add(new Tag(name_, description_)); }
+        public Tag(string name_, string description_) { name = name_; description = description_; SaveText(); }
+
+
+        public void SaveText()
+        {
+            string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.txt";
+            using (TextWriter tw = new StreamWriter(path, true))
+            {
+                if (!File.Exists(path))
+                {
+                    File.Create(path);
+                    tw.WriteLine($"(Tag) Name: {Name} | Description: {Description}");
+                }
+                else
+                {
+                    tw.WriteLine($"(Tag) Name: {Name} | Description: {Description}");
+                }
+            }
+        }
 
     }
 }
