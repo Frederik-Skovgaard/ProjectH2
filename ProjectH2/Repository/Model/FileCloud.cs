@@ -8,6 +8,7 @@ using ProjectH2.Repository.Controller;
 
 namespace ProjectH2.Repository.Model
 {
+    //TODO: Add properties to file & file cloud
     public class FileCloud
     {
         //File
@@ -51,7 +52,7 @@ namespace ProjectH2.Repository.Model
         //Find file by name
         public File FindFile(string name)
         {
-            File file = FileList.Find(x => x.name == name);
+            File file = FileList.Find(x => x.Name == name);
             return file;
         }
     }

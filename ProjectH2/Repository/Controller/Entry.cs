@@ -8,6 +8,12 @@ using ProjectH2.Repository.Model;
 namespace ProjectH2.Repository.Controller
 {
     public enum Street { BlogPost, FrameworkReview, Reference}
+
+    //TODO: Add properties to Entry
+    //TODO: Add blog post Class/constructer
+    //TODO: Add framework review Class/constructer
+    //TODO: Add reference Class/constructer
+
     public class Entry
     {
         //Entry propertys
@@ -32,11 +38,11 @@ namespace ProjectH2.Repository.Controller
 
 
         private Contact Contact;
+        private int nummberOfStar;
 
         #endregion
-
-
     }
+
 
     //Create Blog post
     class BlogPost : Entry
@@ -67,7 +73,6 @@ namespace ProjectH2.Repository.Controller
             Image = image;
             NummberOfStart = nummberOfStar;
             Link = link;
-            HeadLine = headLine;
             File = file;
             Tag = tag;
             Language = language;
@@ -78,6 +83,7 @@ namespace ProjectH2.Repository.Controller
     //Create a reference
     class Reference : Entry
     {
+
         public Reference(string text, Image image, File file, Tag tag, Language language, bool active)
         {
             Text = text;
@@ -87,5 +93,7 @@ namespace ProjectH2.Repository.Controller
             Language = language;
             Active = active;
         }
+
+        
     }
 }
