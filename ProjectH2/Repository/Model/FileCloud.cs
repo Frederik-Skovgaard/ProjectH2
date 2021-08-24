@@ -51,7 +51,7 @@ namespace ProjectH2.Repository.Model
         //Find file by name
         public File FindFile(string name)
         {
-            File file = FileList.Find(x => x.name == name);
+            File file = FileList.Find(x => x.Name == name);
             return file;
         }
     }
