@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProjectH2.Repository.Controller;
+using System.Xml;
 
 namespace ProjectH2.Repository.Model
 {
@@ -51,20 +52,32 @@ namespace ProjectH2.Repository.Model
         /// </summary>
         public void SaveText()
         {
-            string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.txt";
+            string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.xml";
 
-            using (TextWriter tw = new StreamWriter(path, true))
-            {
-                if (!File.Exists(path))
-                {
-                    File.Create(path);
-                    tw.WriteLine($"{Name},{Description},{Path} (Image)");
-                }
-                else
-                {
-                    tw.WriteLine($"{Name},{Description},{Path} (Image)");
-                }
-            }
+            XmlTextWriter xmlTextWriter = new XmlTextWriter(path, Encoding.UTF8);
+
+            xmlTextWriter.Formatting = Formatting.Indented;
+
+            xmlTextWriter.WriteStartDocument();
+
+            xmlTextWriter.WriteComment("Test");
+
+            xmlTextWriter.WriteStartElement("Tag");
+
+            xmlTextWriter.WriteElementString("Name", Name);
+
+            xmlTextWriter.WriteElementString("Description", Description);
+
+            xmlTextWriter.WriteElementString("Path", Path);
+
+            xmlTextWriter.WriteEndElement();
+
+            xmlTextWriter.WriteEndDocument();
+
+            xmlTextWriter.Flush();
+
+            xmlTextWriter.Close();
+
         }
 
     }

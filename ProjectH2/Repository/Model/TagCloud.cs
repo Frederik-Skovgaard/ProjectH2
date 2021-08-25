@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using ProjectH2.Repository.Controller;
 
 namespace ProjectH2.Repository.Model
@@ -16,9 +17,24 @@ namespace ProjectH2.Repository.Model
         public Street street { get; set; }
         public List<Tag> TagsList => tagList;
         private List<Tag> tagList = new List<Tag>();
-
       
         private Tag tag;
+
+        public void Reader()
+        {
+            string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.Xml";
+
+            XmlTextReader xtr = new XmlTextReader(path);
+            while (xtr.Read())
+            {
+                if (xtr.NodeType == XmlNodeType.Element && xtr.Name == "Description")
+                {
+                    string s1 = xtr.ReadString();
+                    Console.WriteLine($"Tag = {s1}" );
+                }
+            }
+
+        }
 
         /// <summary>
         /// Method for find tags
@@ -38,31 +54,40 @@ namespace ProjectH2.Repository.Model
         private string name;
         private string description;
 
-
         /// <summary>
         /// Constructor for making tags
         /// </summary>
         /// <param name="name_"></param>
-        public Tag(string name_, string description_) { name = name_; description = description_; SaveText(); }
+        public Tag(string name_, string description_) { name = name_; description = description_; }
 
         /// <summary>
         /// Method for adding tags to text file
         /// </summary>
-        public void SaveText()
+        public void SaveText(Tag tag)
         {
-            string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.txt";
-            using (TextWriter tw = new StreamWriter(path, true))
-            {
-                if (!File.Exists(path))
-                {
-                    File.Create(path);
-                    tw.WriteLine($"{Name},{Description} (Tag)");
-                }
-                else
-                {
-                    tw.WriteLine($"{Name},{Description} (Tag)");
-                }
-            }
+            string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.xml";
+
+            XmlTextWriter xmlTextWriter = new XmlTextWriter(line, Encoding.UTF8);
+
+            xmlTextWriter.Formatting = Formatting.Indented;
+
+            xmlTextWriter.WriteStartDocument();
+
+            xmlTextWriter.WriteComment("Test");
+
+            xmlTextWriter.WriteStartElement("Tag");
+
+            xmlTextWriter.WriteElementString("Name", Name);
+
+            xmlTextWriter.WriteElementString("Description", Description);
+
+            xmlTextWriter.WriteEndElement();
+
+            xmlTextWriter.WriteEndDocument();
+
+            xmlTextWriter.Flush();
+
+            xmlTextWriter.Close();
         }
 
     }
