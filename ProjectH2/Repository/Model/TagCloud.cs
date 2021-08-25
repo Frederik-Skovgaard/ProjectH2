@@ -12,10 +12,12 @@ namespace ProjectH2.Repository.Model
     public class TagCloud
     {
         //Properties
+        //TODO: Maybe change
         public Street street { get; set; }
         public List<Tag> TagsList => tagList;
         private List<Tag> tagList = new List<Tag>();
-        
+
+        private Tag tag;
 
         /// <summary>
         /// Method for find tags
@@ -23,7 +25,7 @@ namespace ProjectH2.Repository.Model
         /// <param name="tag"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Tag FindTag(Tag tag, string name) { tag = TagsList.Find(x => x.Name == name); return tag; }
+        public Tag FindTag(string name) { tag = TagsList.Find(x => x.Name == name); return tag; }
     }
 
     public class Tag

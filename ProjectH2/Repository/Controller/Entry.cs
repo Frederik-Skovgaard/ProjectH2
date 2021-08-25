@@ -41,15 +41,55 @@ namespace ProjectH2.Repository.Controller
     class BlogPost : Entry
     {
         
+    
+        //Constructor without image & file
+        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, TagCloud tag, LanguageCloud language, bool active)
+        {
+            Text = text;
+            HeadLine = headLine;
+            StartDate = startDate;
+            EndDate = endDate;
+            Tag = tag;
+            Language = language;
+            Active = active;
 
-        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, ImageCloud image, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
+        }
+
+        //Constructor with image
+        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, ImageCloud image, TagCloud tag, LanguageCloud language, bool active)
         {
             Text = text;
             HeadLine = headLine;
             StartDate = startDate;
             EndDate = endDate;
             Image = image;
+            Tag = tag;
+            Language = language;
+            Active = active;
+        }
+
+        //Contructor with file
+        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
+        {
+            Text = text;
+            HeadLine = headLine;
+            StartDate = startDate;
+            EndDate = endDate;
             File = file;
+            Tag = tag;
+            Language = language;
+            Active = active;
+        }
+
+        //Constructor with file & image
+        public BlogPost(string text, string headLine, DateTime startDate, DateTime endDate, FileCloud file, ImageCloud image, TagCloud tag, LanguageCloud language, bool active)
+        {
+            Text = text;
+            HeadLine = headLine;
+            StartDate = startDate;
+            EndDate = endDate;
+            File = file;
+            Image = image;
             Tag = tag;
             Language = language;
             Active = active;
@@ -59,14 +99,49 @@ namespace ProjectH2.Repository.Controller
     //Create Frame work review
     class FrameworkReview : Entry
     {
+        //Constructor without file & image
+        public FrameworkReview(string text, int nummberOfStar, string link, string headLine, TagCloud tag, LanguageCloud language, bool active)
+        {
+            Text = text;
+            NummberOfStart = nummberOfStar;
+            Link = link;
+            Tag = tag;
+            Language = language;
+            Active = active;
+        }
 
-        public FrameworkReview(string text, ImageCloud image, int nummberOfStar, string link, string headLine, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
+        //Constructor with image
+        public FrameworkReview(string text, ImageCloud image, int nummberOfStar, string link, string headLine, TagCloud tag, LanguageCloud language, bool active)
         {
             Text = text;
             Image = image;
             NummberOfStart = nummberOfStar;
             Link = link;
+            Tag = tag;
+            Language = language;
+            Active = active;
+        }
+
+        //Constructor with file
+        public FrameworkReview(string text, int nummberOfStar, string link, string headLine, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
+        {
+            Text = text;
+            NummberOfStart = nummberOfStar;
+            Link = link;
             File = file;
+            Tag = tag;
+            Language = language;
+            Active = active;
+        }
+
+        //Constructor with file & image
+        public FrameworkReview(string text, int nummberOfStar, string link, string headLine, FileCloud file, ImageCloud imag, TagCloud tag, LanguageCloud language, bool active)
+        {
+            Text = text;
+            NummberOfStart = nummberOfStar;
+            Link = link;
+            File = file;
+            Image = imag;
             Tag = tag;
             Language = language;
             Active = active;
@@ -76,7 +151,7 @@ namespace ProjectH2.Repository.Controller
     //Create a reference
     class Reference : Entry
     {
-        
+        //Constructor with file & image
         public Reference(string text, ImageCloud image, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
         {
             Text = text;
@@ -87,7 +162,36 @@ namespace ProjectH2.Repository.Controller
             Active = active;
         }
 
+        //Constructor with image
+        public Reference(string text, ImageCloud image, TagCloud tag, LanguageCloud language, bool active)
+        {
+            Text = text;
+            Image = image;
+            Tag = tag;
+            Language = language;
+            Active = active;
+        }
 
-        
+        //Constructor with file
+        public Reference(string text, FileCloud file, TagCloud tag, LanguageCloud language, bool active)
+        {
+            Text = text;
+            File = file;
+            Tag = tag;
+            Language = language;
+            Active = active;
+        }
+
+        //Constructor without image & file
+        public Reference(string text, TagCloud tag, LanguageCloud language, bool active)
+        {
+            Text = text;
+            Tag = tag;
+            Language = language;
+            Active = active;
+        }
+
+
+
     }
 }
