@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using ProjectH2.Controller;
 
 namespace ProjectH2.Model
@@ -14,9 +15,10 @@ namespace ProjectH2.Model
     {
         //File
         public Street Street { get; set; }
-        public List<Files> FileList => fileList;
+        public List<Files> FileList => file.FilesList;
 
-        private List<Files> fileList = new List<Files>();
+        private readonly Files file;
+
 
 
         /// <summary>
@@ -35,12 +37,14 @@ namespace ProjectH2.Model
         public string Language => language;
         public string Path => path;
         public string MD5Sum => md5;
+        public List<Files> FilesList => filesList;
 
         private string name;
         private string language;
         private string path;
         private string md5;
-        
+
+        private List<Files> filesList = new List<Files>();
 
 
         /// <summary>
@@ -58,9 +62,29 @@ namespace ProjectH2.Model
 
             md5 = CheckMD5(path_);
 
-            
+            filesList.Add(new Files(name_, language_, path_));
         }
 
+        /// <summary>
+        /// Read xml file and add to list
+        /// </summary>
+        public void Reader()
+        {
+            string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
+
+            XDocument xdoc = XDocument.Load(line);
+            IEnumerable<XElement> filXML = xdoc.Root.Descendants("File");
+
+            foreach (var filXml in filXML)
+            {
+                string fileName = filXml.Element("Name").Value;
+                string fileLanguage = filXml.Element("Language").Value;
+                string filePath = filXml.Element("Path").Value;
+
+                filesList.Add(new Files(fileName, fileLanguage, filePath));
+
+            }
+        }
 
         /// <summary>
         /// Method for encrypting file and returning the converted hash as a string

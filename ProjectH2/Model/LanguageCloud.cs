@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using ProjectH2.Controller;
 
 namespace ProjectH2.Model
@@ -12,9 +13,9 @@ namespace ProjectH2.Model
     {
         //Properties
         public Street Street { get; set; }
-        public List<Language> Languages => languages;
+        public List<Language> Languages => languages.LanguageList;
 
-        private List<Language> languages = new List<Language>();
+        private Language languages;
 
         /// <summary>
         /// Method for finding language
@@ -31,7 +32,8 @@ namespace ProjectH2.Model
         public string Name => name;
         private string name;
 
-        public List<Entry> EntryList { get; set; }
+        public List<Language> LanguageList => languageList;
+        private List<Language> languageList = new List<Language>();
 
 
         /// <summary>
@@ -40,6 +42,26 @@ namespace ProjectH2.Model
         /// <param name="name_"></param>
         /// <param name="reference_"></param>
         public Language(string name_) { name = name_;  }
+
+
+        /// <summary>
+        /// Read xml file and add to list
+        /// </summary>
+        public void Reader()
+        {
+            string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
+
+            XDocument xdoc = XDocument.Load(line);
+            IEnumerable<XElement> langXML = xdoc.Root.Descendants("Tag");
+
+            foreach (var xElement in langXML)
+            {
+                string langName = xElement.Element("Name").Value;
+
+                languageList.Add(new Language(langName));
+
+            }
+        }
 
     }
 }

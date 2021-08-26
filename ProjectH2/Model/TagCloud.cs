@@ -16,15 +16,9 @@ namespace ProjectH2.Model
         //Properties
         //TODO: Maybe change
         public Street street { get; set; }
-        //public List<Tag> TagsList => tag.TagList;
+        public List<Tag> TagsList => tag.TagList;
 
         private Tag tag;
-
-        //Read & Add to list
-        public void Read()
-        {
-            tag.Reader();
-        }
 
         /// <summary>
         /// Method for find tags
@@ -32,7 +26,7 @@ namespace ProjectH2.Model
         /// <param name="tag"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        //public Tag FindTag(string name) { tag = TagsList.Find(x => x.Name == name); return tag; }
+        public Tag FindTag(string name) { tag = TagsList.Find(x => x.Name == name); return tag; }
     }
 
     public class Tag
@@ -58,7 +52,9 @@ namespace ProjectH2.Model
             tagList.Add(new Tag(name_, description_));
         }
 
-        //Read xml file and add to list
+        /// <summary>
+        /// Read xml file and add to list
+        /// </summary>
         public void Reader()
         {
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
@@ -74,9 +70,6 @@ namespace ProjectH2.Model
                 tagList.Add(new Tag(tagName, tagDesc));
                 
             }
-
         }
-
-
     }
 }

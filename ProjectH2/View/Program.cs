@@ -8,30 +8,30 @@ namespace ProjectH2
 {
     class Program
     {
-        static EntryRepo entry = new EntryRepo();
+        static BlogPostRepo postRepo;
 
         static void Main(string[] args)
         {
-            
 
-            TagCloud tagCloud = new TagCloud();
             Tag tag = new Tag("name", "description");
+            TagCloud tagCloud = new TagCloud();
 
-            //FileCloud fileCloud = new FileCloud();
-            //Files files = new Files("name", "C#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
+            Files files = new Files("name", "C#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
+            FileCloud fileCloud = new FileCloud();
 
-            //ImageCloud imageCloud = new ImageCloud();
-            //Image image = new Image("name", "description", @"C:\");
+            Image image = new Image("name", "description", @"C:\");
+            ImageCloud imageCloud = new ImageCloud();
 
-            //LanguageCloud languageCloud = new LanguageCloud();
-            //Language language = new Language("name");
-
-            //BlogPost blog = new BlogPost("Text", "HeadLine", DateTime.Now, DateTime.Today, fileCloud, imageCloud, tagCloud, languageCloud, true);
-
-            //entry.SaveText(blog, image, files, language, tag, Street.BlogPost);
-
-            TagCloud.Reader();
+            Language language = new Language("name");
+            LanguageCloud languageCloud = new LanguageCloud();
             
+
+            BlogPost blog = new BlogPost("Text", "HeadLine", DateTime.Now, DateTime.Today, fileCloud, imageCloud, tagCloud, languageCloud, true);
+
+
+            postRepo.SaveBlogPost(blog, imageCloud, fileCloud, languageCloud, tagCloud);
+
+
         }
     }
 }
