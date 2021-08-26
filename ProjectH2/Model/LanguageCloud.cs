@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectH2.Repository.Controller;
+using ProjectH2.Controller;
 
-namespace ProjectH2.Repository.Model
+namespace ProjectH2.Model
 {
     public class LanguageCloud
     {
@@ -39,28 +39,7 @@ namespace ProjectH2.Repository.Model
         /// </summary>
         /// <param name="name_"></param>
         /// <param name="reference_"></param>
-        public Language(string name_) { name = name_;  SaveText(); }
+        public Language(string name_) { name = name_;  }
 
-
-        /// <summary>
-        /// Method for adding languages to text file
-        /// </summary>
-        public void SaveText()
-        {
-            string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.txt";
-
-            using (TextWriter tw = new StreamWriter(path, true))
-            {
-                if (!File.Exists(path))
-                {
-                    File.Create(path);
-                    tw.WriteLine($"{name} (Language)");
-                }
-                else
-                {
-                    tw.WriteLine($"{name} (Language)");
-                }
-            }
-        }
     }
 }

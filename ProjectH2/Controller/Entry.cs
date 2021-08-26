@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using ProjectH2.Interfaces;
-using ProjectH2.Repository.Model;
+using ProjectH2.Model;
 
-namespace ProjectH2.Repository.Controller
+namespace ProjectH2.Controller
 {
     public enum Street { BlogPost, FrameworkReview, Reference}
 
-    public class Entry : IEntry
+    public abstract class Entry : IEntry
     {
         //Entry propertys
         #region Entry prop
@@ -31,9 +32,9 @@ namespace ProjectH2.Repository.Controller
 
         public string Link { get; set; }
         public int NummberOfStart { get; set; }
-
-
         #endregion
+
+        
     }
 
 
@@ -190,6 +191,8 @@ namespace ProjectH2.Repository.Controller
             Language = language;
             Active = active;
         }
+
+        
 
 
 

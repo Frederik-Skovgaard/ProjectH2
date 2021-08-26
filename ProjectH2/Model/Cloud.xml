@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ROOT>
+  <Entry>
+    <BlogPost>
+      <HeadLine>HeadLine</HeadLine>
+      <Text>Text</Text>
+      <StartDate>26-08-2021 10:09:46</StartDate>
+      <EndDate>26-08-2021 00:00:00</EndDate>
+      <FileCloud>
+        <File>
+          <Name>name</Name>
+          <FileLanguage>C#</FileLanguage>
+          <FilePath>C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt</FilePath>
+        </File>
+      </FileCloud>
+      <ImageCloud>
+        <Image>
+          <Name>name</Name>
+          <Description>description</Description>
+          <Path>C:\</Path>
+        </Image>
+      </ImageCloud>
+      <TagCloud>
+        <Tag>
+          <Name>name</Name>
+          <Description>name</Description>
+        </Tag>
+      </TagCloud>
+      <LanguageCloud>
+        <Language>
+          <Name>name</Name>
+        </Language>
+      </LanguageCloud>
+    </BlogPost>
+  </Entry>
+  <Entry>
+    <BlogPost>
+      <HeadLine>HeadLine</HeadLine>
+      <Text>Text</Text>
+      <StartDate>26-08-2021 11:48:10</StartDate>
+      <EndDate>26-08-2021 00:00:00</EndDate>
+      <FileCloud>
+        <File>
+          <Name>name</Name>
+          <FileLanguage>C#</FileLanguage>
+          <FilePath>C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt</FilePath>
+        </File>
+      </FileCloud>
+      <ImageCloud>
+        <Image>
+          <Name>name</Name>
+          <Description>description</Description>
+          <Path>C:\</Path>
+        </Image>
+      </ImageCloud>
+      <TagCloud>
+        <Tag>
+          <Name>name</Name>
+          <Description>description</Description>
+        </Tag>
+      </TagCloud>
+      <LanguageCloud>
+        <Language>
+          <Name>name</Name>
+        </Language>
+      </LanguageCloud>
+      <Active>True</Active>
+    </BlogPost>
+  </Entry>
+</ROOT>

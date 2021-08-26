@@ -4,10 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectH2.Repository.Controller;
+using ProjectH2.Controller;
 using System.Xml;
 
-namespace ProjectH2.Repository.Model
+namespace ProjectH2.Model
 {
     public class ImageCloud
     {
@@ -45,40 +45,7 @@ namespace ProjectH2.Repository.Model
         /// <param name="name_"></param>
         /// <param name="description_"></param>
         /// <param name="path_"></param>
-        public Image(string name_, string description_, string path_) { name = name_; description = description_; path = path_; SaveText(); }
-
-        /// <summary>
-        /// Method for adding images to text file
-        /// </summary>
-        public void SaveText()
-        {
-            string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.xml";
-
-            XmlTextWriter xmlTextWriter = new XmlTextWriter(path, Encoding.UTF8);
-
-            xmlTextWriter.Formatting = Formatting.Indented;
-
-            xmlTextWriter.WriteStartDocument();
-
-            xmlTextWriter.WriteComment("Test");
-
-            xmlTextWriter.WriteStartElement("Tag");
-
-            xmlTextWriter.WriteElementString("Name", Name);
-
-            xmlTextWriter.WriteElementString("Description", Description);
-
-            xmlTextWriter.WriteElementString("Path", Path);
-
-            xmlTextWriter.WriteEndElement();
-
-            xmlTextWriter.WriteEndDocument();
-
-            xmlTextWriter.Flush();
-
-            xmlTextWriter.Close();
-
-        }
+        public Image(string name_, string description_, string path_) { name = name_; description = description_; path = path_; }
 
     }
 }

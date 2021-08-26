@@ -5,9 +5,9 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectH2.Repository.Controller;
+using ProjectH2.Controller;
 
-namespace ProjectH2.Repository.Model
+namespace ProjectH2.Model
 {
    
     public class FileCloud
@@ -58,28 +58,7 @@ namespace ProjectH2.Repository.Model
 
             md5 = CheckMD5(path_);
 
-            SaveText();
-        }
-
-        /// <summary>
-        /// Method for adding files to text file
-        /// </summary>
-        public void SaveText()
-        {
-            string path = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Repository\Model\Cloud.txt";
-
-            using (TextWriter tw = new StreamWriter(path, true))
-            {
-                if (!File.Exists(path))
-                {
-                    File.Create(path);
-                    tw.WriteLine($"{MD5Sum},{Name} (File)");
-                }
-                else
-                {
-                    tw.WriteLine($"{MD5Sum},{Name} (File)");
-                }
-            }
+            
         }
 
 

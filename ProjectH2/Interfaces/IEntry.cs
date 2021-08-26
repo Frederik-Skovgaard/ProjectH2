@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectH2.Repository.Model;
+using ProjectH2.Model;
 
 namespace ProjectH2.Interfaces
 {
