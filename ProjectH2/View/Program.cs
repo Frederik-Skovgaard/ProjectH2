@@ -46,8 +46,8 @@ namespace ProjectH2
 
             //Create & add file to list
             Files blogFiles = new Files("BlogName", "BlogC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
-            BlogFileCloud.AddFile(blogFiles);
-            blogFiles.AddFile(blogFiles);
+            BlogFileCloud.AddFile(new Files(blogFiles.Name, blogFiles.MD5Sum));
+            blogFiles.AddFile(new Files(blogFiles.Name, blogFiles.MD5Sum));
 
             //Create & add image to list
             Image blogImage = new Image("BlogName", "BlogDescription", @"F:\");
@@ -74,8 +74,8 @@ namespace ProjectH2
 
             //Create & add file to list
             Files frameFile = new Files("FrameName", "FrameC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
-            FrameFileCloud.AddFile(frameFile);
-            frameFile.AddFile(frameFile);
+            FrameFileCloud.AddFile(new Files(frameFile.Name, frameFile.MD5Sum));
+            frameFile.AddFile(new Files(frameFile.Name, frameFile.MD5Sum));
 
             //Create & add image to list
             Image frameImage = new Image("FrameName", "FrameDescription", "FramePath");
@@ -94,6 +94,29 @@ namespace ProjectH2
 
             //Reference Test
 
+            //Create & add tag to list
+            Tag refTag = new Tag("RefName", "RefDescription");
+            RefTagCloud.AddTag(refTag);
+            refTag.AddTag(refTag);
+
+            //Create & add file to list
+            Files refFile = new Files("RefName", "RefC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
+            RefFileCloud.AddFile(new Files(refFile.Name, refFile.MD5Sum));
+            refFile.AddFile(new Files(refFile.Name, refFile.MD5Sum));
+
+            //Create & add image to list
+            Image refImage = new Image("RefName", "RefDescription", "RefPath");
+            RefImageCloud.AddImage(refImage);
+            refImage.AddImage(refImage);
+
+            //Create & add language to list
+            Language refLanguge = new Language("RefC#");
+            RefLanguageCloud.AddLanguage(refLanguge);
+            refLanguge.AddLanguage(refLanguge);
+
+            //Create a reference & add to xml file
+            Reference reference = new Reference("RefText", RefImageCloud, RefFileCloud, RefTagCloud, RefLanguageCloud, true);
+            referenceRepo.SaveReference(reference, reference.Image, reference.File, reference.Language, reference.Tag);
 
 
 
@@ -105,7 +128,8 @@ namespace ProjectH2
             //Read xml & add to list
             cloud.ReadFileToLists(frameTag, frameImage, frameLanguage, frameFile);
 
-
+            //Read xml & add to list
+            cloud.ReadFileToLists(refTag, refImage, refLanguge, refFile);
 
             //Resualt
 
@@ -118,8 +142,8 @@ namespace ProjectH2
             Console.WriteLine(FrameTagCloud.TagList.Count);
 
             //Reference lsits check
-            //Console.WriteLine(blogTag.TagsList.Count);
-            //Console.WriteLine(BlogTagCloud.TagList.Count);
+            Console.WriteLine(refTag.TagsList.Count);
+            Console.WriteLine(RefTagCloud.TagList.Count);
             Console.ReadLine();
         }
     }

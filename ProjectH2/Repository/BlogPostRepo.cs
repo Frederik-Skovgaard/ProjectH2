@@ -68,7 +68,7 @@ namespace ProjectH2.Repository
                 nodeFile.AppendChild(nodeFileName);
 
                 XmlNode nodeMD5 = xdoc1.CreateElement("MD5");
-                nodeMD5.InnerText = file.MD5Sum;
+                nodeMD5.InnerText = Cloud.MD5Sum;
                 nodeFile.AppendChild(nodeMD5);
             }
 
@@ -278,7 +278,7 @@ namespace ProjectH2.Repository
                 nodeFile.AppendChild(nodeFileName);
 
                 XmlNode nodeMD5 = xdoc1.CreateElement("MD5");
-                nodeMD5.InnerText = file.MD5Sum;
+                nodeMD5.InnerText = Cloud.MD5Sum;
                 nodeFile.AppendChild(nodeMD5);
             }
 
