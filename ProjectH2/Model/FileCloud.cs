@@ -15,6 +15,9 @@ namespace ProjectH2.Model
     {
         //File
         public Street Street { get; set; }
+        public string MD5Sum => md5;
+        private string md5;
+
 
         //File list with files for specific post
         public List<Files> FileList => filesList;
@@ -36,6 +39,24 @@ namespace ProjectH2.Model
         /// <returns></returns>
         public Files FindFile(string name) { Files file = FileList.Find(x => x.Name == name); return file; }
 
+        /// <summary>
+        /// Method for encrypting file and returning the converted hash as a string
+        /// </summary>
+        /// <param name="path_"></param>
+        /// <returns></returns>
+        public string CheckMD5(string path_)
+        {
+            using (MD5 md5Sm_ = MD5.Create())
+            {
+                //Open & Read file
+                using (FileStream stream = File.OpenRead(path_))
+                {
+                    byte[] hash = md5Sm_.ComputeHash(stream);
+                    return md5 = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+        }
+
     }
 
     //File class
@@ -45,13 +66,18 @@ namespace ProjectH2.Model
         public string Name => name;
         public string Language => language;
         public string Path => path;
-        public string MD5Sum => md5;
         
 
         private string name;
         private string language;
         private string path;
+
+
+        public string MD5Sum => md5;
         private string md5;
+
+        private FileCloud file;
+        
 
         //File list with every file
         public List<Files> FilesList => filesList;
@@ -70,8 +96,9 @@ namespace ProjectH2.Model
             language = language_;
             path = path_;
 
-            md5 = CheckMD5(path_);
+            md5 = file.CheckMD5(path_);
         }
+
 
 
         /// <summary>
@@ -87,10 +114,9 @@ namespace ProjectH2.Model
             foreach (var filXml in filXML)
             {
                 string fileName = filXml.Element("Name").Value;
-                string fileLanguage = filXml.Element("Language").Value;
-                string filePath = filXml.Element("Path").Value;
+                string fileMD5 = filXml.Element("MD5").Value;
 
-                filesList.Add(new Files(fileName, fileLanguage, filePath));
+                filesList.Add(new Files(fileName, fileMD5, ""));
 
             }
         }
@@ -104,22 +130,6 @@ namespace ProjectH2.Model
             filesList.Add(file);
         }
 
-        /// <summary>
-        /// Method for encrypting file and returning the converted hash as a string
-        /// </summary>
-        /// <param name="path_"></param>
-        /// <returns></returns>
-        public string CheckMD5(string path_)
-        {
-            using (MD5 md5Sm_ = MD5.Create())
-            {
-                //Open & Read file
-                using (FileStream stream = File.OpenRead(path_))
-                {
-                    byte[] hash = md5Sm_.ComputeHash(stream);
-                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
-                }
-            }
-        }
+        
     }
 }

@@ -67,13 +67,9 @@ namespace ProjectH2.Repository
                 nodeFileName.InnerText = Cloud.Name;
                 nodeFile.AppendChild(nodeFileName);
 
-                XmlNode nodeFileLanguage = xdoc1.CreateElement("Language");
-                nodeFileLanguage.InnerText = Cloud.Language;
-                nodeFile.AppendChild(nodeFileLanguage);
-
-                XmlNode nodeFilePath = xdoc1.CreateElement("Path");
-                nodeFilePath.InnerText = Cloud.Path;
-                nodeFile.AppendChild(nodeFilePath);
+                XmlNode nodeMD5 = xdoc1.CreateElement("MD5");
+                nodeMD5.InnerText = file.MD5Sum;
+                nodeFile.AppendChild(nodeMD5);
             }
 
 
@@ -114,7 +110,7 @@ namespace ProjectH2.Repository
             //Language
             foreach (Language Cloud in language.Languages)
             {
-                XmlNode nodeLanguage = xdoc1.CreateElement("BlogLanguage");
+                XmlNode nodeLanguage = xdoc1.CreateElement("EntryLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
                 XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
@@ -160,9 +156,6 @@ namespace ProjectH2.Repository
             XmlNode nodeEndDate = xdoc1.CreateElement("EndDate");
             nodeEndDate.InnerText = blog.EndDate.ToString();
             nodeBlog.AppendChild(nodeEndDate);
-
-            XmlNode nodeFileCloud = xdoc1.CreateElement("FileCloud");
-            nodeBlog.AppendChild(nodeFileCloud);
 
             XmlNode nodeImageCloud = xdoc1.CreateElement("ImageCloud");
             nodeBlog.AppendChild(nodeImageCloud);
@@ -214,7 +207,7 @@ namespace ProjectH2.Repository
             //Language
             foreach (Language Cloud in language.Languages)
             {
-                XmlNode nodeLanguage = xdoc1.CreateElement("BlogLanguage");
+                XmlNode nodeLanguage = xdoc1.CreateElement("EntryLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
                 XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
@@ -264,9 +257,6 @@ namespace ProjectH2.Repository
             XmlNode nodeFileCloud = xdoc1.CreateElement("FileCloud");
             nodeBlog.AppendChild(nodeFileCloud);
 
-            XmlNode nodeImageCloud = xdoc1.CreateElement("ImageCloud");
-            nodeBlog.AppendChild(nodeImageCloud);
-
             XmlNode nodeTagCloud = xdoc1.CreateElement("TagCloud");
             nodeBlog.AppendChild(nodeTagCloud);
 
@@ -287,13 +277,9 @@ namespace ProjectH2.Repository
                 nodeFileName.InnerText = Cloud.Name;
                 nodeFile.AppendChild(nodeFileName);
 
-                XmlNode nodeFileLanguage = xdoc1.CreateElement("Language");
-                nodeFileLanguage.InnerText = Cloud.Language;
-                nodeFile.AppendChild(nodeFileLanguage);
-
-                XmlNode nodeFilePath = xdoc1.CreateElement("Path");
-                nodeFilePath.InnerText = Cloud.Path;
-                nodeFile.AppendChild(nodeFilePath);
+                XmlNode nodeMD5 = xdoc1.CreateElement("MD5");
+                nodeMD5.InnerText = file.MD5Sum;
+                nodeFile.AppendChild(nodeMD5);
             }
 
             //Tag 
@@ -314,7 +300,7 @@ namespace ProjectH2.Repository
             //Language
             foreach (Language Cloud in language.Languages)
             {
-                XmlNode nodeLanguage = xdoc1.CreateElement("BlogLanguage");
+                XmlNode nodeLanguage = xdoc1.CreateElement("EntryLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
                 XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
@@ -360,12 +346,6 @@ namespace ProjectH2.Repository
             nodeEndDate.InnerText = blog.EndDate.ToString();
             nodeBlog.AppendChild(nodeEndDate);
 
-            XmlNode nodeFileCloud = xdoc1.CreateElement("FileCloud");
-            nodeBlog.AppendChild(nodeFileCloud);
-
-            XmlNode nodeImageCloud = xdoc1.CreateElement("ImageCloud");
-            nodeBlog.AppendChild(nodeImageCloud);
-
             XmlNode nodeTagCloud = xdoc1.CreateElement("TagCloud");
             nodeBlog.AppendChild(nodeTagCloud);
 
@@ -394,7 +374,7 @@ namespace ProjectH2.Repository
             //Language
             foreach (Language Cloud in language.Languages)
             {
-                XmlNode nodeLanguage = xdoc1.CreateElement("BlogLanguage");
+                XmlNode nodeLanguage = xdoc1.CreateElement("EntryLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
                 XmlNode nodeLanguageName = xdoc1.CreateElement("Name");

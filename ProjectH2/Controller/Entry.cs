@@ -11,6 +11,9 @@ namespace ProjectH2.Controller
 {
     public enum Street { BlogPost, FrameworkReview, Reference}
 
+    //TODO: Add id
+    //TODO: Add read method
+
     public abstract class Entry : IEntry
     {
         //Entry propertys

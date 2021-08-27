@@ -61,7 +61,7 @@ namespace ProjectH2.Model
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XDocument xdoc = XDocument.Load(line);
-            IEnumerable<XElement> langXML = xdoc.Root.Descendants("BlogLanguage");
+            IEnumerable<XElement> langXML = xdoc.Root.Descendants("EntryLanguage");
 
             foreach (var xElement in langXML)
             {
