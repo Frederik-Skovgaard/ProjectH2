@@ -14,9 +14,9 @@ namespace ProjectH2.Model
     {
        //Properties
         public Street street { get; set; }
+
+        //Image list with images for specifk post
         public List<Image> ImageList => imageList;
-
-
         private List<Image> imageList = new List<Image>();
 
         /// <summary>
@@ -37,26 +37,7 @@ namespace ProjectH2.Model
         /// <returns></returns>
         public Image FindImage(Image image, string name_) { image = ImageList.Find(x => x.Name == name_); return image; }
 
-        /// <summary>
-        /// Read xml file and add to list
-        /// </summary>
-        public void Reader()
-        {
-            string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
-
-            XDocument xdoc = XDocument.Load(line);
-            IEnumerable<XElement> imageXML = xdoc.Root.Descendants("Tag");
-
-            foreach (var imagXml in imageXML)
-            {
-                string imageName = imagXml.Element("Name").Value;
-                string imageDesc = imagXml.Element("Description").Value;
-                string imagePath = imagXml.Element("Path").Value;
-
-                imageList.Add(new Image(imageName, imageDesc, imagePath));
-
-            }
-        }
+        
     }
 
 
@@ -71,7 +52,9 @@ namespace ProjectH2.Model
         private string description;
         private string path;
 
-       
+        //Image list with every image
+        public List<Image> ImageList => imageList;
+        private List<Image> imageList = new List<Image>();
 
        
         /// <summary>
@@ -86,6 +69,36 @@ namespace ProjectH2.Model
             description = description_; 
             path = path_; 
         
+        }
+
+        /// <summary>
+        /// Read xml file and add to list
+        /// </summary>
+        public void Reader()
+        {
+            string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
+
+            XDocument xdoc = XDocument.Load(line);
+            IEnumerable<XElement> imageXML = xdoc.Root.Descendants("Image");
+
+            foreach (var imagXml in imageXML)
+            {
+                string imageName = imagXml.Element("Name").Value;
+                string imageDesc = imagXml.Element("Description").Value;
+                string imagePath = imagXml.Element("Path").Value;
+
+                imageList.Add(new Image(imageName, imageDesc, imagePath));
+
+            }
+        }
+
+        /// <summary>
+        /// Method for adding image to list
+        /// </summary>
+        /// <param name="ima"></param>
+        public void AddImage(Image ima)
+        {
+            imageList.Add(ima);
         }
     }
 }

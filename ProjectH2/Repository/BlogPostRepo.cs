@@ -97,7 +97,7 @@ namespace ProjectH2.Repository
             }
 
             //Tag 
-            foreach (Tag Cloud in tag.TagsList)
+            foreach (Tag Cloud in tag.TagList)
             {
                 XmlNode nodeTag = xdoc1.CreateElement("Tag");
                 nodeTagCloud.AppendChild(nodeTag);
@@ -114,7 +114,7 @@ namespace ProjectH2.Repository
             //Language
             foreach (Language Cloud in language.Languages)
             {
-                XmlNode nodeLanguage = xdoc1.CreateElement("Language");
+                XmlNode nodeLanguage = xdoc1.CreateElement("BlogLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
                 XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
@@ -141,13 +141,9 @@ namespace ProjectH2.Repository
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
-            //Entry
-            XmlNode nodeEntry = xdoc1.CreateElement("Entry");
-            xdoc1.DocumentElement.AppendChild(nodeEntry);
-
             //Blog Post
             XmlNode nodeBlog = xdoc1.CreateElement("BlogPost");
-            nodeEntry.AppendChild(nodeBlog);
+            xdoc1.DocumentElement.AppendChild(nodeBlog);
 
             XmlNode nodeHeadLine = xdoc1.CreateElement("HeadLine");
             nodeHeadLine.InnerText = blog.HeadLine;
@@ -181,7 +177,6 @@ namespace ProjectH2.Repository
             nodeActive.InnerText = blog.Active.ToString();
             nodeBlog.AppendChild(nodeActive);
 
-
             //Image
             foreach (Image Cloud in image.ImageList)
             {
@@ -202,7 +197,7 @@ namespace ProjectH2.Repository
             }
 
             //Tag 
-            foreach (Tag Cloud in tag.TagsList)
+            foreach (Tag Cloud in tag.TagList)
             {
                 XmlNode nodeTag = xdoc1.CreateElement("Tag");
                 nodeTagCloud.AppendChild(nodeTag);
@@ -219,7 +214,7 @@ namespace ProjectH2.Repository
             //Language
             foreach (Language Cloud in language.Languages)
             {
-                XmlNode nodeLanguage = xdoc1.CreateElement("Language");
+                XmlNode nodeLanguage = xdoc1.CreateElement("BlogLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
                 XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
@@ -246,13 +241,9 @@ namespace ProjectH2.Repository
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
-            //Entry
-            XmlNode nodeEntry = xdoc1.CreateElement("Entry");
-            xdoc1.DocumentElement.AppendChild(nodeEntry);
-
             //Blog Post
             XmlNode nodeBlog = xdoc1.CreateElement("BlogPost");
-            nodeEntry.AppendChild(nodeBlog);
+            xdoc1.DocumentElement.AppendChild(nodeBlog);
 
             XmlNode nodeHeadLine = xdoc1.CreateElement("HeadLine");
             nodeHeadLine.InnerText = blog.HeadLine;
@@ -306,7 +297,7 @@ namespace ProjectH2.Repository
             }
 
             //Tag 
-            foreach (Tag Cloud in tag.TagsList)
+            foreach (Tag Cloud in tag.TagList)
             {
                 XmlNode nodeTag = xdoc1.CreateElement("Tag");
                 nodeTagCloud.AppendChild(nodeTag);
@@ -323,7 +314,7 @@ namespace ProjectH2.Repository
             //Language
             foreach (Language Cloud in language.Languages)
             {
-                XmlNode nodeLanguage = xdoc1.CreateElement("Language");
+                XmlNode nodeLanguage = xdoc1.CreateElement("BlogLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
                 XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
@@ -349,13 +340,9 @@ namespace ProjectH2.Repository
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
-            //Entry
-            XmlNode nodeEntry = xdoc1.CreateElement("Entry");
-            xdoc1.DocumentElement.AppendChild(nodeEntry);
-
             //Blog Post
             XmlNode nodeBlog = xdoc1.CreateElement("BlogPost");
-            nodeEntry.AppendChild(nodeBlog);
+            xdoc1.DocumentElement.AppendChild(nodeBlog);
 
             XmlNode nodeHeadLine = xdoc1.CreateElement("HeadLine");
             nodeHeadLine.InnerText = blog.HeadLine;
@@ -389,9 +376,8 @@ namespace ProjectH2.Repository
             nodeActive.InnerText = blog.Active.ToString();
             nodeBlog.AppendChild(nodeActive);
 
-
             //Tag 
-            foreach (Tag Cloud in tag.TagsList)
+            foreach (Tag Cloud in tag.TagList)
             {
                 XmlNode nodeTag = xdoc1.CreateElement("Tag");
                 nodeTagCloud.AppendChild(nodeTag);
@@ -408,13 +394,14 @@ namespace ProjectH2.Repository
             //Language
             foreach (Language Cloud in language.Languages)
             {
-                XmlNode nodeLanguage = xdoc1.CreateElement("Language");
+                XmlNode nodeLanguage = xdoc1.CreateElement("BlogLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
                 XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
                 nodeLanguageName.InnerText = Cloud.Name;
                 nodeLanguage.AppendChild(nodeLanguageName);
             }
+
 
             xdoc1.Save(line);
         }

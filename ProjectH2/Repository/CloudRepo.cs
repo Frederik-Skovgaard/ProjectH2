@@ -10,10 +10,8 @@ using ProjectH2.Model;
 namespace ProjectH2.Repository
 {
 
-    class CloudRepo
+    public class CloudRepo
     {
-        
-
         /// <summary>
         /// Read all tags, images, languages & files. Add them to there respected lists.
         /// </summary>
@@ -27,7 +25,6 @@ namespace ProjectH2.Repository
             image.Reader();
             language.Reader();
             file.Reader();
-            
         }
     }
 }

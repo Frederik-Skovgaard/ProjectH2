@@ -15,12 +15,13 @@ namespace ProjectH2.Model
     {
         //Properties
         public Street street { get; set; }
-        public List<Tag> TagsList => tagList;
-        private List<Tag> tagList;
 
+        //Tag list with tag for specifk post
+        public List<Tag> TagList => tagList;
+        private List<Tag> tagList = new List<Tag>();
 
         /// <summary>
-        /// Method for adding to list
+        /// Method for adding tag to cloud list
         /// </summary>
         /// <param name="tag"></param>
         public void AddTag(Tag tag)
@@ -28,7 +29,40 @@ namespace ProjectH2.Model
             tagList.Add(tag);
         }
 
+        /// <summary>
+        /// Method for find tags
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Tag FindTag(Tag tag, string name) { tag = TagList.Find(x => x.Name == name); return tag; }
+    }
 
+    public class Tag
+    {
+        //Properties
+        public string Name => name;
+        public string Description => description;
+
+        private string name;
+        private string description;
+
+        //Tag list with every tag
+        public List<Tag> TagsList => tagList;
+        private List<Tag> tagList = new List<Tag>();
+
+
+        /// <summary>
+        /// Constructor for making tags
+        /// </summary>
+        /// <param name="name_"></param>
+        public Tag(string name_, string description_) 
+        { 
+            name = name_; 
+            description = description_;
+        }
+
+        
         /// <summary>
         /// Read xml file and add to list
         /// </summary>
@@ -49,37 +83,16 @@ namespace ProjectH2.Model
             }
         }
 
+
         /// <summary>
-        /// Method for find tags
+        /// Method for adding to list
         /// </summary>
         /// <param name="tag"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public Tag FindTag(Tag tag, string name) { tag = TagsList.Find(x => x.Name == name); return tag; }
-    }
-
-    public class Tag
-    {
-        //Properties
-        public string Name => name;
-        public string Description => description;
-
-        private string name;
-        private string description;
-
-
-        /// <summary>
-        /// Constructor for making tags
-        /// </summary>
-        /// <param name="name_"></param>
-        public Tag(string name_, string description_) 
-        { 
-            name = name_; 
-            description = description_;
+        public void AddTag(Tag tag)
+        {
+            tagList.Add(tag);
         }
 
-
-        
 
     }
 }
