@@ -13,9 +13,18 @@ namespace ProjectH2.Model
     {
         //Properties
         public Street Street { get; set; }
-        public List<Language> Languages => languages.LanguageList;
+        public List<Language> Languages => languageList;
 
-        private Language languages;
+        private List<Language> languageList = new List<Language>();
+
+        /// <summary>
+        /// Method for adding to image list
+        /// </summary>
+        /// <param name="lang"></param>
+        public void AddLanguage(Language lang)
+        {
+            languageList.Add(lang);
+        }
 
         /// <summary>
         /// Method for finding language
@@ -24,25 +33,6 @@ namespace ProjectH2.Model
         /// <param name="name"></param>
         /// <returns></returns>
         public Language FindLanguage(Language language, string name) { language = Languages.Find(x => x.Name == name); return language; }
-    }
-
-    public class Language
-    {
-        //Propertyes
-        public string Name => name;
-        private string name;
-
-        public List<Language> LanguageList => languageList;
-        private List<Language> languageList = new List<Language>();
-
-
-        /// <summary>
-        /// Contrutor for adding languages
-        /// </summary>
-        /// <param name="name_"></param>
-        /// <param name="reference_"></param>
-        public Language(string name_) { name = name_;  }
-
 
         /// <summary>
         /// Read xml file and add to list
@@ -62,6 +52,22 @@ namespace ProjectH2.Model
 
             }
         }
+    }
+
+    public class Language
+    {
+        //Propertyes
+        public string Name => name;
+        private string name;
+        
+
+
+        /// <summary>
+        /// Contrutor for adding languages
+        /// </summary>
+        /// <param name="name_"></param>
+        /// <param name="reference_"></param>
+        public Language(string name_) { name = name_;  }
 
     }
 }

@@ -32,9 +32,7 @@ namespace ProjectH2.Controller
 
         public string Link { get; set; }
         public int NummberOfStart { get; set; }
-        #endregion
-
-        
+        #endregion        
     }
 
 

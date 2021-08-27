@@ -14,43 +14,20 @@ namespace ProjectH2.Model
     public class TagCloud
     {
         //Properties
-        //TODO: Maybe change
         public Street street { get; set; }
-        public List<Tag> TagsList => tag.TagList;
+        public List<Tag> TagsList => tagList;
+        private List<Tag> tagList;
 
-        private Tag tag;
 
         /// <summary>
-        /// Method for find tags
+        /// Method for adding to list
         /// </summary>
         /// <param name="tag"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public Tag FindTag(string name) { tag = TagsList.Find(x => x.Name == name); return tag; }
-    }
-
-    public class Tag
-    {
-        //Properties
-        public string Name => name;
-        public string Description => description;
-        public List<Tag> TagList => tagList;
-
-        private string name;
-        private string description;
-        private List<Tag> tagList = new List<Tag>();
-
-        /// <summary>
-        /// Constructor for making tags
-        /// </summary>
-        /// <param name="name_"></param>
-        public Tag(string name_, string description_) 
-        { 
-            name = name_; 
-            description = description_; 
-
-            tagList.Add(new Tag(name_, description_));
+        public void AddTag(Tag tag)
+        {
+            tagList.Add(tag);
         }
+
 
         /// <summary>
         /// Read xml file and add to list
@@ -68,8 +45,41 @@ namespace ProjectH2.Model
                 string tagDesc = tagXml.Element("Description").Value;
 
                 tagList.Add(new Tag(tagName, tagDesc));
-                
+
             }
         }
+
+        /// <summary>
+        /// Method for find tags
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Tag FindTag(Tag tag, string name) { tag = TagsList.Find(x => x.Name == name); return tag; }
+    }
+
+    public class Tag
+    {
+        //Properties
+        public string Name => name;
+        public string Description => description;
+
+        private string name;
+        private string description;
+
+
+        /// <summary>
+        /// Constructor for making tags
+        /// </summary>
+        /// <param name="name_"></param>
+        public Tag(string name_, string description_) 
+        { 
+            name = name_; 
+            description = description_;
+        }
+
+
+        
+
     }
 }
