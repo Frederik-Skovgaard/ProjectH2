@@ -11,9 +11,6 @@ namespace ProjectH2.Controller
 {
     public enum Street { BlogPost, FrameworkReview, Reference}
 
-    //TODO: Add id
-    //TODO: Add read method
-
     public abstract class Entry : IEntry
     {
         //Entry propertys
@@ -23,7 +20,6 @@ namespace ProjectH2.Controller
         public bool Active { get; set; }
         public string HeadLine { get; set; }
 
-
         public string Text { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
@@ -31,6 +27,7 @@ namespace ProjectH2.Controller
         public FileCloud File { get; set; }
         public TagCloud Tag { get; set; }
         public LanguageCloud Language { get; set; }
+
 
 
         public string Link { get; set; }

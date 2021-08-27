@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectH2.Repository.Controller
+namespace ProjectH2.Controller
 {
-    class Contact
+    public class Contact
     {
         //Contact name
         public string FullName => $"{firstName} {lastName}";

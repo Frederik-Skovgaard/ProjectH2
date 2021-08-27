@@ -14,7 +14,7 @@ namespace ProjectH2.Repository
         /// <summary>
         /// Method for add to xml with image & file
         /// </summary>
-        public void SaveBlogPost(BlogPost blog, ImageCloud image, FileCloud file, LanguageCloud language, TagCloud tag)
+        public void SaveBlogPost(BlogPost blog, ImageCloud image, FileCloud file, LanguageCloud language, TagCloud tag, Contact contact)
         {
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
@@ -52,6 +52,32 @@ namespace ProjectH2.Repository
 
             XmlNode nodeLanguageCloud = xdoc1.CreateElement("LanguageCloud");
             nodeBlog.AppendChild(nodeLanguageCloud);
+
+            //Contact 
+            XmlNode nodeContact = xdoc1.CreateElement("Contact");
+            nodeBlog.AppendChild(nodeContact);
+
+            XmlNode nodeContactName = xdoc1.CreateElement("Name");
+            nodeContactName.InnerText = contact.FullName;
+            nodeContact.AppendChild(nodeContactName);
+
+            XmlNode nodeContactAddress = xdoc1.CreateElement("Address");
+            nodeContactAddress.InnerText = contact.Address;
+            nodeContact.AppendChild(nodeContactAddress);
+
+            XmlNode nodeContactPhone = xdoc1.CreateElement("Phone");
+            nodeContactPhone.InnerText = contact.Phone;
+            nodeContact.AppendChild(nodeContactPhone);
+
+            XmlNode nodeContactEmail = xdoc1.CreateElement("Email");
+            nodeContactEmail.InnerText = contact.Email;
+            nodeContact.AppendChild(nodeContactEmail);
+
+            XmlNode nodeContactLinkedin = xdoc1.CreateElement("Linkedin");
+            nodeContactLinkedin.InnerText = contact.Linkedin;
+            nodeContact.AppendChild(nodeContactLinkedin);
+
+
 
             XmlNode nodeActive = xdoc1.CreateElement("Active");
             nodeActive.InnerText = blog.Active.ToString();
@@ -130,7 +156,7 @@ namespace ProjectH2.Repository
         /// <param name="language"></param>
         /// <param name="tag"></param>
         /// <param name="street"></param>
-        public void SaveBlogPost(BlogPost blog, ImageCloud image, LanguageCloud language, TagCloud tag)
+        public void SaveBlogPost(BlogPost blog, ImageCloud image, LanguageCloud language, TagCloud tag, Contact contact)
         {
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
@@ -165,6 +191,30 @@ namespace ProjectH2.Repository
 
             XmlNode nodeLanguageCloud = xdoc1.CreateElement("LanguageCloud");
             nodeBlog.AppendChild(nodeLanguageCloud);
+
+            //Contact 
+            XmlNode nodeContact = xdoc1.CreateElement("Contact");
+            nodeBlog.AppendChild(nodeContact);
+
+            XmlNode nodeContactName = xdoc1.CreateElement("Name");
+            nodeContactName.InnerText = contact.FullName;
+            nodeContact.AppendChild(nodeContactName);
+
+            XmlNode nodeContactAddress = xdoc1.CreateElement("Address");
+            nodeContactAddress.InnerText = contact.Address;
+            nodeContact.AppendChild(nodeContactAddress);
+
+            XmlNode nodeContactPhone = xdoc1.CreateElement("Phone");
+            nodeContactPhone.InnerText = contact.Phone;
+            nodeContact.AppendChild(nodeContactPhone);
+
+            XmlNode nodeContactEmail = xdoc1.CreateElement("Email");
+            nodeContactEmail.InnerText = contact.Email;
+            nodeContact.AppendChild(nodeContactEmail);
+
+            XmlNode nodeContactLinkedin = xdoc1.CreateElement("Linkedin");
+            nodeContactLinkedin.InnerText = contact.Linkedin;
+            nodeContact.AppendChild(nodeContactLinkedin);
 
             XmlNode nodeActive = xdoc1.CreateElement("Active");
             nodeActive.InnerText = blog.Active.ToString();
@@ -227,7 +277,7 @@ namespace ProjectH2.Repository
         /// <param name="language"></param>
         /// <param name="tag"></param>
         /// <param name="street"></param>
-        public void SaveBlogPost(BlogPost blog, FileCloud file, LanguageCloud language, TagCloud tag)
+        public void SaveBlogPost(BlogPost blog, FileCloud file, LanguageCloud language, TagCloud tag, Contact contact)
         {
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
@@ -262,6 +312,30 @@ namespace ProjectH2.Repository
 
             XmlNode nodeLanguageCloud = xdoc1.CreateElement("LanguageCloud");
             nodeBlog.AppendChild(nodeLanguageCloud);
+
+            //Contact 
+            XmlNode nodeContact = xdoc1.CreateElement("Contact");
+            nodeBlog.AppendChild(nodeContact);
+
+            XmlNode nodeContactName = xdoc1.CreateElement("Name");
+            nodeContactName.InnerText = contact.FullName;
+            nodeContact.AppendChild(nodeContactName);
+
+            XmlNode nodeContactAddress = xdoc1.CreateElement("Address");
+            nodeContactAddress.InnerText = contact.Address;
+            nodeContact.AppendChild(nodeContactAddress);
+
+            XmlNode nodeContactPhone = xdoc1.CreateElement("Phone");
+            nodeContactPhone.InnerText = contact.Phone;
+            nodeContact.AppendChild(nodeContactPhone);
+
+            XmlNode nodeContactEmail = xdoc1.CreateElement("Email");
+            nodeContactEmail.InnerText = contact.Email;
+            nodeContact.AppendChild(nodeContactEmail);
+
+            XmlNode nodeContactLinkedin = xdoc1.CreateElement("Linkedin");
+            nodeContactLinkedin.InnerText = contact.Linkedin;
+            nodeContact.AppendChild(nodeContactLinkedin);
 
             XmlNode nodeActive = xdoc1.CreateElement("Active");
             nodeActive.InnerText = blog.Active.ToString();
@@ -319,7 +393,7 @@ namespace ProjectH2.Repository
         /// <param name="language"></param>
         /// <param name="tag"></param>
         /// <param name="street"></param>
-        public void SaveBlogPost(BlogPost blog, LanguageCloud language, TagCloud tag)
+        public void SaveBlogPost(BlogPost blog, LanguageCloud language, TagCloud tag, Contact contact)
         {
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
@@ -351,6 +425,30 @@ namespace ProjectH2.Repository
 
             XmlNode nodeLanguageCloud = xdoc1.CreateElement("LanguageCloud");
             nodeBlog.AppendChild(nodeLanguageCloud);
+
+            //Contact 
+            XmlNode nodeContact = xdoc1.CreateElement("Contact");
+            nodeBlog.AppendChild(nodeContact);
+
+            XmlNode nodeContactName = xdoc1.CreateElement("Name");
+            nodeContactName.InnerText = contact.FullName;
+            nodeContact.AppendChild(nodeContactName);
+
+            XmlNode nodeContactAddress = xdoc1.CreateElement("Address");
+            nodeContactAddress.InnerText = contact.Address;
+            nodeContact.AppendChild(nodeContactAddress);
+
+            XmlNode nodeContactPhone = xdoc1.CreateElement("Phone");
+            nodeContactPhone.InnerText = contact.Phone;
+            nodeContact.AppendChild(nodeContactPhone);
+
+            XmlNode nodeContactEmail = xdoc1.CreateElement("Email");
+            nodeContactEmail.InnerText = contact.Email;
+            nodeContact.AppendChild(nodeContactEmail);
+
+            XmlNode nodeContactLinkedin = xdoc1.CreateElement("Linkedin");
+            nodeContactLinkedin.InnerText = contact.Linkedin;
+            nodeContact.AppendChild(nodeContactLinkedin);
 
             XmlNode nodeActive = xdoc1.CreateElement("Active");
             nodeActive.InnerText = blog.Active.ToString();

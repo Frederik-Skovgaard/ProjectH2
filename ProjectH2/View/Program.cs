@@ -38,6 +38,9 @@ namespace ProjectH2
 
         static void Main(string[] args)
         {
+            //Contact
+            Contact contact = new Contact("Frederik", "Skovgaard", "Gadde", 13, "53 53 53 53", "Email@gmail.com", "www.linkind.com");
+
             //Blog post test
             //Create & add tag to list
             Tag blogTag = new Tag("BlogName", "BlogDescription");
@@ -61,7 +64,7 @@ namespace ProjectH2
 
             //Create Blog post & add to xml file
             BlogPost blog = new BlogPost("Unes Anus", "BigTitle", DateTime.Now, DateTime.Today, BlogFileCloud, BlogImageCloud, BlogTagCloud, BlogLanguageCloud, true);
-            postRepo.SaveBlogPost(blog, blog.Image, blog.File, blog.Language, blog.Tag);
+            postRepo.SaveBlogPost(blog, blog.Image, blog.File, blog.Language, blog.Tag, contact);
 
 
 
@@ -89,7 +92,7 @@ namespace ProjectH2
 
             //Create a framework review & add to xml file
             FrameworkReview frameworkReview = new FrameworkReview("Text", 5, "www.link.dk", "HeadLine", FrameFileCloud, FrameImageCloud, FrameTagCloud, FrameLanguageCloud, true);
-            revieRepo.SaveFrameReview(frameworkReview, frameworkReview.Image, frameworkReview.File, frameworkReview.Language, frameworkReview.Tag);
+            revieRepo.SaveFrameReview(frameworkReview, frameworkReview.Image, frameworkReview.File, frameworkReview.Language, frameworkReview.Tag, contact);
 
 
             //Reference Test
@@ -116,7 +119,7 @@ namespace ProjectH2
 
             //Create a reference & add to xml file
             Reference reference = new Reference("RefText", RefImageCloud, RefFileCloud, RefTagCloud, RefLanguageCloud, true);
-            referenceRepo.SaveReference(reference, reference.Image, reference.File, reference.Language, reference.Tag);
+            referenceRepo.SaveReference(reference, reference.Image, reference.File, reference.Language, reference.Tag, contact);
 
 
 
