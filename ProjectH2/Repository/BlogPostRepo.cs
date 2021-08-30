@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 using ProjectH2.Controller;
 using ProjectH2.Model;
 
@@ -11,11 +12,15 @@ namespace ProjectH2.Repository
 {
     class BlogPostRepo
     {
+        public EntryRepo entry = new EntryRepo();
+
         /// <summary>
         /// Method for add to xml with image & file
         /// </summary>
         public void SaveBlogPost(BlogPost blog, ImageCloud image, FileCloud file, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+            
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
@@ -24,6 +29,12 @@ namespace ProjectH2.Repository
             //Blog Post
             XmlNode nodeBlog = xdoc1.CreateElement("BlogPost");
             xdoc1.DocumentElement.AppendChild(nodeBlog);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeBlog.Attributes.Append(attributeID);
+
+            
 
             XmlNode nodeHeadLine = xdoc1.CreateElement("HeadLine");
             nodeHeadLine.InnerText = blog.HeadLine;
@@ -158,6 +169,8 @@ namespace ProjectH2.Repository
         /// <param name="street"></param>
         public void SaveBlogPost(BlogPost blog, ImageCloud image, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
@@ -166,6 +179,10 @@ namespace ProjectH2.Repository
             //Blog Post
             XmlNode nodeBlog = xdoc1.CreateElement("BlogPost");
             xdoc1.DocumentElement.AppendChild(nodeBlog);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeBlog.Attributes.Append(attributeID);
 
             XmlNode nodeHeadLine = xdoc1.CreateElement("HeadLine");
             nodeHeadLine.InnerText = blog.HeadLine;
@@ -279,6 +296,8 @@ namespace ProjectH2.Repository
         /// <param name="street"></param>
         public void SaveBlogPost(BlogPost blog, FileCloud file, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
@@ -287,6 +306,10 @@ namespace ProjectH2.Repository
             //Blog Post
             XmlNode nodeBlog = xdoc1.CreateElement("BlogPost");
             xdoc1.DocumentElement.AppendChild(nodeBlog);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeBlog.Attributes.Append(attributeID);
 
             XmlNode nodeHeadLine = xdoc1.CreateElement("HeadLine");
             nodeHeadLine.InnerText = blog.HeadLine;
@@ -395,6 +418,8 @@ namespace ProjectH2.Repository
         /// <param name="street"></param>
         public void SaveBlogPost(BlogPost blog, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
@@ -403,6 +428,10 @@ namespace ProjectH2.Repository
             //Blog Post
             XmlNode nodeBlog = xdoc1.CreateElement("BlogPost");
             xdoc1.DocumentElement.AppendChild(nodeBlog);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeBlog.Attributes.Append(attributeID);
 
             XmlNode nodeHeadLine = xdoc1.CreateElement("HeadLine");
             nodeHeadLine.InnerText = blog.HeadLine;

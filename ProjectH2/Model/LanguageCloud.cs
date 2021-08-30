@@ -63,7 +63,7 @@ namespace ProjectH2.Model
             XDocument xdoc = XDocument.Load(line);
             IEnumerable<XElement> langXML = xdoc.Root.Descendants("EntryLanguage");
 
-            foreach (var xElement in langXML)
+            foreach (XElement xElement in langXML)
             {
                 string langName = xElement.Element("Name").Value;
 

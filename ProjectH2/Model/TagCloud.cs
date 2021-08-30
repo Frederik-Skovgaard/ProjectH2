@@ -73,7 +73,7 @@ namespace ProjectH2.Model
             XDocument xdoc = XDocument.Load(line);
             IEnumerable<XElement> tagXML = xdoc.Root.Descendants("Tag");
 
-            foreach (var tagXml in tagXML)
+            foreach (XElement tagXml in tagXML)
             {
                 string tagName = tagXml.Element("Name").Value;
                 string tagDesc = tagXml.Element("Description").Value;

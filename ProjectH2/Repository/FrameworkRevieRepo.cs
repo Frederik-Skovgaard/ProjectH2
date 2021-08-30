@@ -11,6 +11,8 @@ namespace ProjectH2.Repository
 {
     class FrameworkRevieRepo
     {
+        public EntryRepo entry = new EntryRepo();
+
         /// <summary>
         /// Method for saving framework review in xml file with file & image
         /// </summary>
@@ -21,14 +23,21 @@ namespace ProjectH2.Repository
         /// <param name="tag"></param>
         public void SaveFrameReview(FrameworkReview framework, ImageCloud image, FileCloud file, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
-            //FrameWork Reveiw
-            XmlNode nodeFramework = xdoc1.CreateElement("FrameWorkReview");
+
+            //Framework Review
+            XmlNode nodeFramework = xdoc1.CreateElement("FrameworkReview");
             xdoc1.DocumentElement.AppendChild(nodeFramework);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeFramework.Attributes.Append(attributeID);
 
             XmlNode nodeText = xdoc1.CreateElement("Text");
             nodeText.InnerText = framework.Text;
@@ -155,14 +164,20 @@ namespace ProjectH2.Repository
         /// <param name="tag"></param>
         public void SaveFrameReview(FrameworkReview framework, ImageCloud image, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
-            //FrameWork Reveiw
-            XmlNode nodeFramework = xdoc1.CreateElement("FrameWorkReview");
+            //Framework Review
+            XmlNode nodeFramework = xdoc1.CreateElement("FrameworkReview");
             xdoc1.DocumentElement.AppendChild(nodeFramework);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeFramework.Attributes.Append(attributeID);
 
             XmlNode nodeText = xdoc1.CreateElement("Text");
             nodeText.InnerText = framework.Text;
@@ -272,14 +287,20 @@ namespace ProjectH2.Repository
         /// <param name="tag"></param>
         public void SaveFrameReview(FrameworkReview framework, FileCloud file, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
-            //FrameWork Reveiw
-            XmlNode nodeFramework = xdoc1.CreateElement("FrameWorkReview");
+            //Framework Review
+            XmlNode nodeFramework = xdoc1.CreateElement("FrameworkReview");
             xdoc1.DocumentElement.AppendChild(nodeFramework);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeFramework.Attributes.Append(attributeID);
 
             XmlNode nodeText = xdoc1.CreateElement("Text");
             nodeText.InnerText = framework.Text;
@@ -384,14 +405,20 @@ namespace ProjectH2.Repository
         /// <param name="tag"></param>
         public void SaveFrameReview(FrameworkReview framework, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
-            //FrameWork Reveiw
-            XmlNode nodeFramework = xdoc1.CreateElement("FrameWorkReview");
+            //Framework Review
+            XmlNode nodeFramework = xdoc1.CreateElement("FrameworkReview");
             xdoc1.DocumentElement.AppendChild(nodeFramework);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeFramework.Attributes.Append(attributeID);
 
             XmlNode nodeText = xdoc1.CreateElement("Text");
             nodeText.InnerText = framework.Text;

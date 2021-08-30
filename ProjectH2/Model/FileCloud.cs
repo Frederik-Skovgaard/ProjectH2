@@ -113,7 +113,7 @@ namespace ProjectH2.Model
             XDocument xdoc = XDocument.Load(line);
             IEnumerable<XElement> filXML = xdoc.Root.Descendants("File");
 
-            foreach (var filXml in filXML)
+            foreach (XElement filXml in filXML)
             {
                 string fileName = filXml.Element("Name").Value;
                 string fileMD5 = filXml.Element("MD5").Value;

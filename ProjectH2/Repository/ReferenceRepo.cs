@@ -11,6 +11,8 @@ namespace ProjectH2.Repository
 {
     class ReferenceRepo
     {
+        public EntryRepo entry = new EntryRepo();
+
         /// <summary>
         /// Method for saving reference in xml file with image & file
         /// </summary>
@@ -21,13 +23,20 @@ namespace ProjectH2.Repository
         /// <param name="tag"></param>
         public void SaveReference(Reference reference, ImageCloud image, FileCloud file, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
+            //Reference
             XmlNode nodeReference = xdoc1.CreateElement("Reference");
             xdoc1.DocumentElement.AppendChild(nodeReference);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeReference.Attributes.Append(attributeID);
 
             XmlNode nodeText = xdoc1.CreateElement("Name");
             nodeText.InnerText = reference.Text;
@@ -146,13 +155,20 @@ namespace ProjectH2.Repository
         /// <param name="tag"></param>
         public void SaveReference(Reference reference, FileCloud file, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
+            //Reference
             XmlNode nodeReference = xdoc1.CreateElement("Reference");
             xdoc1.DocumentElement.AppendChild(nodeReference);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeReference.Attributes.Append(attributeID);
 
             XmlNode nodeText = xdoc1.CreateElement("Name");
             nodeText.InnerText = reference.Text;
@@ -249,13 +265,20 @@ namespace ProjectH2.Repository
         /// <param name="tag"></param>
         public void SaveReference(Reference reference, ImageCloud image, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
+            //Reference
             XmlNode nodeReference = xdoc1.CreateElement("Reference");
             xdoc1.DocumentElement.AppendChild(nodeReference);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeReference.Attributes.Append(attributeID);
 
             XmlNode nodeText = xdoc1.CreateElement("Name");
             nodeText.InnerText = reference.Text;
@@ -357,13 +380,20 @@ namespace ProjectH2.Repository
         /// <param name="tag"></param>
         public void SaveReference(Reference reference, LanguageCloud language, TagCloud tag, Contact contact)
         {
+            entry.IDCatcher();
+
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
+            //Reference
             XmlNode nodeReference = xdoc1.CreateElement("Reference");
             xdoc1.DocumentElement.AppendChild(nodeReference);
+
+            XmlAttribute attributeID = xdoc1.CreateAttribute("ID");
+            attributeID.Value = entry.ID.ToString();
+            nodeReference.Attributes.Append(attributeID);
 
             XmlNode nodeText = xdoc1.CreateElement("Name");
             nodeText.InnerText = reference.Text;

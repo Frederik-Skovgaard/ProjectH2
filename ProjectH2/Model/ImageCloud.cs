@@ -81,7 +81,7 @@ namespace ProjectH2.Model
             XDocument xdoc = XDocument.Load(line);
             IEnumerable<XElement> imageXML = xdoc.Root.Descendants("Image");
 
-            foreach (var imagXml in imageXML)
+            foreach (XElement imagXml in imageXML)
             {
                 string imageName = imagXml.Element("Name").Value;
                 string imageDesc = imagXml.Element("Description").Value;
