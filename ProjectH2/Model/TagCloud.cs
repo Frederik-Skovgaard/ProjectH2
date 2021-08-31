@@ -61,7 +61,6 @@ namespace ProjectH2.Model
             name = name_;
             description = description_;
         }
-        public Tag(){}
 
 
         /// <summary>

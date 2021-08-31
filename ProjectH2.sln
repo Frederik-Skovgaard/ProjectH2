@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		ChangeLog.txt = ChangeLog.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTesting", "ProjectTesting\ProjectTesting.csproj", "{8E2B011B-2419-45EF-8C84-071ACF1273F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{2CA0FD73-DDD8-4761-AF79-E9CEF5552578}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CA0FD73-DDD8-4761-AF79-E9CEF5552578}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CA0FD73-DDD8-4761-AF79-E9CEF5552578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E2B011B-2419-45EF-8C84-071ACF1273F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E2B011B-2419-45EF-8C84-071ACF1273F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E2B011B-2419-45EF-8C84-071ACF1273F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E2B011B-2419-45EF-8C84-071ACF1273F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace ProjectH2.Repository
 {
-    class EntryRepo
+    public class EntryRepo
     {
         public int ID => id;
         private int id;
