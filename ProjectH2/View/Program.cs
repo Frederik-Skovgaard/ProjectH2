@@ -9,6 +9,7 @@ namespace ProjectH2
     class Program
     {
         private static CloudRepo cloud = new CloudRepo();
+        private static EntryRepo entryRepo = new EntryRepo();
 
         //For Blog post
         private static BlogPostRepo postRepo = new BlogPostRepo();
@@ -38,6 +39,10 @@ namespace ProjectH2
 
         static void Main(string[] args)
         {
+            entryRepo.EntryDelete(1);
+
+            entryRepo.EntryUpdate(1);
+
             //Contact
             Contact contact = new Contact("Frederik", "Skovgaard", "Gadde", 13, "53 53 53 53", "Email@gmail.com", "www.linkind.com");
 

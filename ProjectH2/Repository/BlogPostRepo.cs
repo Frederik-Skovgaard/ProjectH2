@@ -26,6 +26,7 @@ namespace ProjectH2.Repository
             XmlDocument xdoc1 = new XmlDocument();
             xdoc1.Load(line);
 
+            
             //Blog Post
             XmlNode nodeBlog = xdoc1.CreateElement("BlogPost");
             xdoc1.DocumentElement.AppendChild(nodeBlog);

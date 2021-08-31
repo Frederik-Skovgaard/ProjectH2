@@ -10,7 +10,7 @@ using ProjectH2.Controller;
 
 namespace ProjectH2.Model
 {
-    
+
     public class TagCloud
     {
         //Properties
@@ -56,13 +56,13 @@ namespace ProjectH2.Model
         /// Constructor for making tags
         /// </summary>
         /// <param name="name_"></param>
-        public Tag(string name_, string description_) 
-        { 
-            name = name_; 
+        public Tag(string name_, string description_)
+        {
+            name = name_;
             description = description_;
         }
 
-        
+
         /// <summary>
         /// Read xml file and add to list
         /// </summary>
@@ -71,16 +71,19 @@ namespace ProjectH2.Model
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XDocument xdoc = XDocument.Load(line);
+
             IEnumerable<XElement> tagXML = xdoc.Root.Descendants("Tag");
 
-            foreach (XElement tagXml in tagXML)
+            foreach (XElement tag in tagXML)
             {
-                string tagName = tagXml.Element("Name").Value;
-                string tagDesc = tagXml.Element("Description").Value;
+                string tagName = tag.Element("Name").Value;
+                string tagDesc = tag.Element("Description").Value;
 
                 tagList.Add(new Tag(tagName, tagDesc));
 
+                xdoc.Save(line);
             }
+
         }
 
 
@@ -92,7 +95,6 @@ namespace ProjectH2.Model
         {
             tagList.Add(tag);
         }
-
-
     }
 }
+

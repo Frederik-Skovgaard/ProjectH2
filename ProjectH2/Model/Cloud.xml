@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Entry>
   <BlogPost ID="1">
-    <HeadLine>BigTitle</HeadLine>
+    <HeadLine>New HeadLine</HeadLine>
     <Text>Unes Anus</Text>
-    <StartDate>30-08-2021 09:48:43</StartDate>
+    <StartDate>30-08-2021 15:06:45</StartDate>
     <EndDate>30-08-2021 00:00:00</EndDate>
     <FileCloud>
       <File>
@@ -36,7 +36,7 @@
       <Email>Email@gmail.com</Email>
       <Linkedin>www.linkind.com</Linkedin>
     </Contact>
-    <Active>True</Active>
+    <Active>False</Active>
   </BlogPost>
   <FrameworkReview ID="2">
     <Text>Text</Text>
@@ -113,7 +113,7 @@
   <BlogPost ID="4">
     <HeadLine>BigTitle</HeadLine>
     <Text>Unes Anus</Text>
-    <StartDate>30-08-2021 09:49:03</StartDate>
+    <StartDate>30-08-2021 15:07:06</StartDate>
     <EndDate>30-08-2021 00:00:00</EndDate>
     <FileCloud>
       <File>
