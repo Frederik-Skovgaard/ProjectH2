@@ -19,12 +19,12 @@ namespace ProjectH2.Repository
         /// <param name="image"></param>
         /// <param name="language"></param>
         /// <param name="file"></param>
-        public void ReadFileToLists(Tag tag, Image image, Language language, Files file)
+        public async Task ReadFileToLists(Tag tag, Image image, Language language, Files file)
         {
-            tag.Reader();
-            image.Reader();
-            language.Reader();
-            file.Reader();
+            await tag.Reader();
+            await image.Reader();
+            await language.Reader();
+            await file.Reader();
         }
     }
 }

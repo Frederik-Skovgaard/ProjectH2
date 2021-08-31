@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using ProjectH2.Model;
 using ProjectH2.Controller;
 using ProjectH2.Repository;
+using System.Threading.Tasks;
 
 namespace ProjectH2
 {
@@ -37,7 +38,7 @@ namespace ProjectH2
 
 
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             entryRepo.EntryDelete(1);
 
@@ -50,7 +51,6 @@ namespace ProjectH2
             //Create & add tag to list
             Tag blogTag = new Tag("BlogName", "BlogDescription");
             BlogTagCloud.AddTag(blogTag);
-            blogTag.AddTag(blogTag);
 
             //Create & add file to list
             Files blogFiles = new Files("BlogName", "BlogC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
@@ -72,13 +72,15 @@ namespace ProjectH2
             postRepo.SaveBlogPost(blog, blog.Image, blog.File, blog.Language, blog.Tag, contact);
 
 
-
             //Framework review Test
 
             //Create & add tag to list
             Tag frameTag = new Tag("FrameName", "FrameDescription");
             FrameTagCloud.AddTag(frameTag);
-            frameTag.AddTag(frameTag);
+
+            Tag frameTags = new Tag("FrameName", "FrameDescription");
+            FrameTagCloud.AddTag(frameTags);
+
 
             //Create & add file to list
             Files frameFile = new Files("FrameName", "FrameC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
@@ -105,7 +107,12 @@ namespace ProjectH2
             //Create & add tag to list
             Tag refTag = new Tag("RefName", "RefDescription");
             RefTagCloud.AddTag(refTag);
-            refTag.AddTag(refTag);
+
+            Tag refTags = new Tag("RefName", "RefDescription");
+            RefTagCloud.AddTag(refTags);
+            
+            Tag refTagss = new Tag("RefName", "RefDescription");
+            RefTagCloud.AddTag(refTagss);
 
             //Create & add file to list
             Files refFile = new Files("RefName", "RefC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
@@ -131,26 +138,33 @@ namespace ProjectH2
             //Read to lists
 
             //Read xml & add to list
-            cloud.ReadFileToLists(blogTag, blogImage, blogLanguage, blogFiles);
+            await cloud.ReadFileToLists(blogTag, blogImage, blogLanguage, blogFiles);
 
             //Read xml & add to list
-            cloud.ReadFileToLists(frameTag, frameImage, frameLanguage, frameFile);
+            await cloud.ReadFileToLists(frameTag, frameImage, frameLanguage, frameFile);
 
             //Read xml & add to list
-            cloud.ReadFileToLists(refTag, refImage, refLanguge, refFile);
+            await cloud.ReadFileToLists(refTag, refImage, refLanguge, refFile);
 
             //Resualt
 
             //Blog Post lsits check
+            Console.Write("Total amount of tags in xml fie: ");
             Console.WriteLine(blogTag.TagsList.Count);
+
+            Console.WriteLine("------------------------------");
+
+            Console.Write("Blog Post Tag Cloud count: ");
             Console.WriteLine(BlogTagCloud.TagList.Count);
 
             //Framework review lsits check
-            Console.WriteLine(frameTag.TagsList.Count);
+            Console.WriteLine("------------------------------");
+            Console.Write("Framework Review Tag Cloud count: ");
             Console.WriteLine(FrameTagCloud.TagList.Count);
 
             //Reference lsits check
-            Console.WriteLine(refTag.TagsList.Count);
+            Console.WriteLine("------------------------------");
+            Console.Write("Reference Tag Cloud count: ");
             Console.WriteLine(RefTagCloud.TagList.Count);
             Console.ReadLine();
         }

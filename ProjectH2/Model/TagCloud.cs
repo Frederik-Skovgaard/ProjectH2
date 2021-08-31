@@ -61,18 +61,21 @@ namespace ProjectH2.Model
             name = name_;
             description = description_;
         }
+        public Tag(){}
 
 
         /// <summary>
         /// Read xml file and add to list
         /// </summary>
-        public void Reader()
+        public async Task Reader()
         {
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
-            XDocument xdoc = XDocument.Load(line);
+
+            XDocument xdoc = await LoadAsync(line);
 
             IEnumerable<XElement> tagXML = xdoc.Root.Descendants("Tag");
+
 
             foreach (XElement tag in tagXML)
             {
@@ -83,7 +86,22 @@ namespace ProjectH2.Model
 
                 xdoc.Save(line);
             }
+        }
 
+        /// <summary>
+        /// Asyncly read xml file
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static Task<XDocument> LoadAsync(String path)
+        {
+            return Task.Run(() =>
+            {
+                using (var stream = File.OpenText(path))
+                {
+                    return XDocument.Load(stream);
+                }
+            });
         }
 
 

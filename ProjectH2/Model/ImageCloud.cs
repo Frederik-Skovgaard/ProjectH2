@@ -74,11 +74,11 @@ namespace ProjectH2.Model
         /// <summary>
         /// Read xml file and add to list
         /// </summary>
-        public void Reader()
+        public async Task Reader()
         {
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
-            XDocument xdoc = XDocument.Load(line);
+            XDocument xdoc = await LoadAsync(line);
             IEnumerable<XElement> imageXML = xdoc.Root.Descendants("Image");
 
             foreach (XElement imagXml in imageXML)
@@ -90,6 +90,23 @@ namespace ProjectH2.Model
                 imageList.Add(new Image(imageName, imageDesc, imagePath));
 
             }
+        }
+
+
+        /// <summary>
+        /// Asyncly read xml file
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static Task<XDocument> LoadAsync(String path)
+        {
+            return Task.Run(() =>
+            {
+                using (var stream = File.OpenText(path))
+                {
+                    return XDocument.Load(stream);
+                }
+            });
         }
 
         /// <summary>
