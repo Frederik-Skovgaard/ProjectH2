@@ -9,7 +9,7 @@ using ProjectH2.Model;
 
 namespace ProjectH2.Repository
 {
-    class FrameworkRevieRepo
+    public class FrameworkRevieRepo
     {
         public EntryRepo entry = new EntryRepo();
 

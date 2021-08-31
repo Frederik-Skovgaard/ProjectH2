@@ -3,12 +3,12 @@
   <BlogPost ID="1">
     <HeadLine>New HeadLine</HeadLine>
     <Text>Unes Anus</Text>
-    <StartDate>31-08-2021 09:42:37</StartDate>
+    <StartDate>31-08-2021 11:01:23</StartDate>
     <EndDate>31-08-2021 00:00:00</EndDate>
     <FileCloud>
       <File>
         <Name>BlogName</Name>
-        <MD5>81051bcc2cf1bedf378224b0a93e2877</MD5>
+        <MD5>bbcd8ebc6f943f05c9ac94b34f768b39</MD5>
       </File>
     </FileCloud>
     <ImageCloud>
@@ -38,36 +38,33 @@
     </Contact>
     <Active>True</Active>
   </BlogPost>
-  <FrameworkReview ID="2">
-    <Text>Text</Text>
-    <NummberOfStars>5</NummberOfStars>
-    <Link>www.link.dk</Link>
+  <BlogPost ID="2">
+    <HeadLine>BigTitle</HeadLine>
+    <Text>Unes Anus</Text>
+    <StartDate>31-08-2021 11:02:06</StartDate>
+    <EndDate>31-08-2021 00:00:00</EndDate>
     <FileCloud>
       <File>
-        <Name>FrameName</Name>
-        <MD5>81051bcc2cf1bedf378224b0a93e2877</MD5>
+        <Name>BlogName</Name>
+        <MD5>9c588b4ce5023e2fa6df1cd1dd219451</MD5>
       </File>
     </FileCloud>
     <ImageCloud>
       <Image>
-        <Name>FrameName</Name>
-        <Description>FrameDescription</Description>
-        <Path>FramePath</Path>
+        <Name>BlogName</Name>
+        <Description>BlogDescription</Description>
+        <Path>F:\</Path>
       </Image>
     </ImageCloud>
     <TagCloud>
       <Tag>
-        <Name>FrameName</Name>
-        <Description>FrameDescription</Description>
-      </Tag>
-      <Tag>
-        <Name>FrameName</Name>
-        <Description>FrameDescription</Description>
+        <Name>BlogName</Name>
+        <Description>BlogDescription</Description>
       </Tag>
     </TagCloud>
     <LanguageCloud>
       <EntryLanguage>
-        <Name>FrameC#</Name>
+        <Name>BlogC#</Name>
       </EntryLanguage>
     </LanguageCloud>
     <Contact>
@@ -78,39 +75,34 @@
       <Linkedin>www.linkind.com</Linkedin>
     </Contact>
     <Active>True</Active>
-  </FrameworkReview>
-  <Reference ID="3">
-    <Name>RefText</Name>
+  </BlogPost>
+  <BlogPost ID="3">
+    <HeadLine>BigTitle</HeadLine>
+    <Text>Unes Anus</Text>
+    <StartDate>31-08-2021 11:05:30</StartDate>
+    <EndDate>31-08-2021 00:00:00</EndDate>
     <FileCloud>
       <File>
-        <Name>RefName</Name>
-        <MD5>81051bcc2cf1bedf378224b0a93e2877</MD5>
+        <Name>BlogName</Name>
+        <MD5>58452b15a7de7896cfa9499fc74f0626</MD5>
       </File>
     </FileCloud>
     <ImageCloud>
       <Image>
-        <Name>RefName</Name>
-        <Description>RefDescription</Description>
-        <Path>RefPath</Path>
+        <Name>BlogName</Name>
+        <Description>BlogDescription</Description>
+        <Path>F:\</Path>
       </Image>
     </ImageCloud>
     <TagCloud>
       <Tag>
-        <Name>RefName</Name>
-        <Description>RefDescription</Description>
-      </Tag>
-      <Tag>
-        <Name>RefName</Name>
-        <Description>RefDescription</Description>
-      </Tag>
-      <Tag>
-        <Name>RefName</Name>
-        <Description>RefDescription</Description>
+        <Name>BlogName</Name>
+        <Description>BlogDescription</Description>
       </Tag>
     </TagCloud>
     <LanguageCloud>
       <EntryLanguage>
-        <Name>RefC#</Name>
+        <Name>BlogC#</Name>
       </EntryLanguage>
     </LanguageCloud>
     <Contact>
@@ -121,5 +113,5 @@
       <Linkedin>www.linkind.com</Linkedin>
     </Contact>
     <Active>True</Active>
-  </Reference>
+  </BlogPost>
 </Entry>

@@ -37,7 +37,7 @@ namespace ProjectH2.Controller
 
 
     //Create Blog post
-    class BlogPost : Entry
+    public class BlogPost : Entry
     {
         
     
@@ -96,7 +96,7 @@ namespace ProjectH2.Controller
     }
 
     //Create Frame work review
-    class FrameworkReview : Entry
+    public class FrameworkReview : Entry
     {
         //Constructor without file & image
         public FrameworkReview(string text, int nummberOfStar, string link, string headLine, TagCloud tag, LanguageCloud language, bool active)
@@ -148,7 +148,7 @@ namespace ProjectH2.Controller
     }
 
     //Create a reference
-    class Reference : Entry
+    public class Reference : Entry
     {
         //Constructor with file & image
         public Reference(string text, ImageCloud image, FileCloud file, TagCloud tag, LanguageCloud language, bool active)

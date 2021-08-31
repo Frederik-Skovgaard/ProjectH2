@@ -10,7 +10,7 @@ using ProjectH2.Model;
 
 namespace ProjectH2.Repository
 {
-    class BlogPostRepo
+    public class BlogPostRepo
     {
         public EntryRepo entry = new EntryRepo();
 
