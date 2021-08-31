@@ -36,7 +36,7 @@
       <Email>Email@gmail.com</Email>
       <Linkedin>www.linkind.com</Linkedin>
     </Contact>
-    <Active>True</Active>
+    <Active>False</Active>
   </BlogPost>
   <BlogPost ID="2">
     <HeadLine>BigTitle</HeadLine>
@@ -114,4 +114,126 @@
     </Contact>
     <Active>True</Active>
   </BlogPost>
+  <BlogPost ID="4">
+    <HeadLine>BigTitle</HeadLine>
+    <Text>Unes Anus</Text>
+    <StartDate>31-08-2021 11:18:49</StartDate>
+    <EndDate>31-08-2021 00:00:00</EndDate>
+    <FileCloud>
+      <File>
+        <Name>BlogName</Name>
+        <MD5>874c3ac1c825c5698635123e656c3ca9</MD5>
+      </File>
+    </FileCloud>
+    <ImageCloud>
+      <Image>
+        <Name>BlogName</Name>
+        <Description>BlogDescription</Description>
+        <Path>F:\</Path>
+      </Image>
+    </ImageCloud>
+    <TagCloud>
+      <Tag>
+        <Name>BlogName</Name>
+        <Description>BlogDescription</Description>
+      </Tag>
+    </TagCloud>
+    <LanguageCloud>
+      <EntryLanguage>
+        <Name>BlogC#</Name>
+      </EntryLanguage>
+    </LanguageCloud>
+    <Contact>
+      <Name>Frederik Skovgaard</Name>
+      <Address>Gadde, 13</Address>
+      <Phone>53 53 53 53</Phone>
+      <Email>Email@gmail.com</Email>
+      <Linkedin>www.linkind.com</Linkedin>
+    </Contact>
+    <Active>True</Active>
+  </BlogPost>
+  <FrameworkReview ID="5">
+    <Text>Text</Text>
+    <NummberOfStars>5</NummberOfStars>
+    <Link>www.link.dk</Link>
+    <FileCloud>
+      <File>
+        <Name>FrameName</Name>
+        <MD5>c53d259a981c4897315156bbbce4396e</MD5>
+      </File>
+    </FileCloud>
+    <ImageCloud>
+      <Image>
+        <Name>FrameName</Name>
+        <Description>FrameDescription</Description>
+        <Path>FramePath</Path>
+      </Image>
+    </ImageCloud>
+    <TagCloud>
+      <Tag>
+        <Name>FrameName</Name>
+        <Description>FrameDescription</Description>
+      </Tag>
+      <Tag>
+        <Name>FrameName</Name>
+        <Description>FrameDescription</Description>
+      </Tag>
+    </TagCloud>
+    <LanguageCloud>
+      <EntryLanguage>
+        <Name>FrameC#</Name>
+      </EntryLanguage>
+    </LanguageCloud>
+    <Contact>
+      <Name>Frederik Skovgaard</Name>
+      <Address>Gadde, 13</Address>
+      <Phone>53 53 53 53</Phone>
+      <Email>Email@gmail.com</Email>
+      <Linkedin>www.linkind.com</Linkedin>
+    </Contact>
+    <Active>True</Active>
+  </FrameworkReview>
+  <Reference ID="6">
+    <Name>RefText</Name>
+    <FileCloud>
+      <File>
+        <Name>RefName</Name>
+        <MD5>1a08f5fe490d8a7e79e3bad46170679a</MD5>
+      </File>
+    </FileCloud>
+    <ImageCloud>
+      <Image>
+        <Name>RefName</Name>
+        <Description>RefDescription</Description>
+        <Path>RefPath</Path>
+      </Image>
+    </ImageCloud>
+    <TagCloud>
+      <Tag>
+        <Name>RefName</Name>
+        <Description>RefDescription</Description>
+      </Tag>
+      <Tag>
+        <Name>RefName</Name>
+        <Description>RefDescription</Description>
+      </Tag>
+      <Tag>
+        <Name>RefName</Name>
+        <Description>RefDescription</Description>
+      </Tag>
+    </TagCloud>
+    <LanguageCloud>
+      <EntryLanguage>
+        <Name>RefC#</Name>
+      </EntryLanguage>
+    </LanguageCloud>
+    <Contact>
+      <Name>Frederik Skovgaard</Name>
+      <Address>Gadde, 13</Address>
+      <Phone>53 53 53 53</Phone>
+      <Email>Email@gmail.com</Email>
+      <Linkedin>www.linkind.com</Linkedin>
+    </Contact>
+    <Active>True</Active>
+  </Reference>
 </Entry>

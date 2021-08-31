@@ -1,8 +1,7 @@
-﻿using System;
-using System.Security.Cryptography;
+﻿using ProjectH2.Controller;
 using ProjectH2.Model;
-using ProjectH2.Controller;
 using ProjectH2.Repository;
+using System;
 using System.Threading.Tasks;
 
 namespace ProjectH2
@@ -53,7 +52,7 @@ namespace ProjectH2
             BlogTagCloud.AddTag(blogTag);
 
             //Create & add file to list
-            Files blogFiles = new Files("BlogName", "BlogC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
+            Files blogFiles = new Files("BlogName", "BlogC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml");
             BlogFileCloud.AddFile(new Files(blogFiles.Name, blogFiles.MD5Sum));
             blogFiles.AddFile(new Files(blogFiles.Name, blogFiles.MD5Sum));
 
@@ -83,7 +82,7 @@ namespace ProjectH2
 
 
             //Create & add file to list
-            Files frameFile = new Files("FrameName", "FrameC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
+            Files frameFile = new Files("FrameName", "FrameC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml");
             FrameFileCloud.AddFile(new Files(frameFile.Name, frameFile.MD5Sum));
             frameFile.AddFile(new Files(frameFile.Name, frameFile.MD5Sum));
 
@@ -115,7 +114,7 @@ namespace ProjectH2
             RefTagCloud.AddTag(refTagss);
 
             //Create & add file to list
-            Files refFile = new Files("RefName", "RefC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.txt");
+            Files refFile = new Files("RefName", "RefC#", @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml");
             RefFileCloud.AddFile(new Files(refFile.Name, refFile.MD5Sum));
             refFile.AddFile(new Files(refFile.Name, refFile.MD5Sum));
 
