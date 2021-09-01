@@ -41,7 +41,7 @@ namespace ProjectH2
         {
             entryRepo.EntryDelete(1);
 
-            entryRepo.EntryUpdate(1);
+            entryRepo.EntryUpdate(1, "HeadLine");
 
             //Contact
             Contact contact = new Contact("Frederik", "Skovgaard", "Gadde", 13, "53 53 53 53", "Email@gmail.com", "www.linkind.com");

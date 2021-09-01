@@ -40,7 +40,6 @@ namespace ProjectTesting
         public void ReadXML()
         {
             //Arrange
-
             TagCloud BlogTagCloud = new TagCloud();
             FileCloud BlogFileCloud = new FileCloud();
             ImageCloud BlogImageCloud = new ImageCloud();
@@ -81,11 +80,11 @@ namespace ProjectTesting
             XDocument xdoc = XDocument.Load(line);
 
             XElement entry = xdoc.Root.Elements("BlogPost")
-                .FirstOrDefault(w => (int)w.Attribute("ID") == 2);
+                .FirstOrDefault(w => (int)w.Attribute("ID") == 1);
 
 
             //Assert
-            Assert.Equal(blog.HeadLine, entry.Element("HeadLine").Value);
+            Assert.Equal(blog.Text, entry.Element("Text").Value);
 
         }
 
@@ -96,7 +95,7 @@ namespace ProjectTesting
         public void UpdateXML()
         {
             //Arrange
-            entryRepo.EntryUpdate(1);
+            entryRepo.EntryUpdate(1, "HeadLine");
 
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 

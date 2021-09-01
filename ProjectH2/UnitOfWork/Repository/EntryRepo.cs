@@ -85,7 +85,7 @@ namespace ProjectH2.Repository
         /// Method for updating
         /// </summary>
         /// <param name="identification"></param>
-        public void EntryUpdate(int identification)
+        public void EntryUpdate(int identification, string element)
         {
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
@@ -96,7 +96,7 @@ namespace ProjectH2.Repository
 
             if (entry != null)
             {
-                entry.Element("HeadLine").Value = "New HeadLine";
+                entry.Element(element).Value = "New HeadLine";
                 xdoc.Save(line);
             }
             else
