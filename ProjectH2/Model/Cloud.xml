@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Entry>
   <BlogPost ID="1">
-    <HeadLine>New HeadLine</HeadLine>
+    <HeadLine>BigTitle</HeadLine>
     <Text>Unes Anus</Text>
-    <StartDate>01-09-2021 10:54:57</StartDate>
+    <StartDate>01-09-2021 11:36:18</StartDate>
     <EndDate>01-09-2021 00:00:00</EndDate>
     <FileCloud>
       <File>
@@ -36,7 +36,7 @@
       <ContacatEmail>Email@gmail.com</ContacatEmail>
       <ContacatLinkedin>www.linkind.com</ContacatLinkedin>
     </Contact>
-    <Active>False</Active>
+    <Active>True</Active>
   </BlogPost>
   <FrameworkReview ID="2">
     <Text>Text</Text>
@@ -45,7 +45,7 @@
     <FileCloud>
       <File>
         <FileName>FrameName</FileName>
-        <MD5>ab165c0dc44cec39ac0d3e57a944bcc8</MD5>
+        <MD5>467c7ec928de0f92583fe624bc090d19</MD5>
       </File>
     </FileCloud>
     <ImageCloud>
@@ -84,7 +84,7 @@
     <FileCloud>
       <File>
         <FileName>RefName</FileName>
-        <MD5>8e79349e0f3914b84715778b3a5c2233</MD5>
+        <MD5>8412f335f8a9b2bd1b53fc0820c150ea</MD5>
       </File>
     </FileCloud>
     <ImageCloud>

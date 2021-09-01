@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectH2.Controller
+namespace ProjectH2.Model
 {
     public class Contact
     {

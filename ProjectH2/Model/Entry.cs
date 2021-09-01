@@ -7,7 +7,7 @@ using System.Xml;
 using ProjectH2.Interfaces;
 using ProjectH2.Model;
 
-namespace ProjectH2.Controller
+namespace ProjectH2.Model
 {
     public enum Street { BlogPost, FrameworkReview, Reference}
 

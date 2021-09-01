@@ -1,5 +1,4 @@
-﻿using ProjectH2.Controller;
-using ProjectH2.Model;
+﻿using ProjectH2.Model;
 using ProjectH2.Repository;
 using System;
 using System.Threading.Tasks;
@@ -12,7 +11,7 @@ namespace ProjectH2
         private static CloudRepo cloud = new CloudRepo();
         private static EntryRepo entryRepo = new EntryRepo();
 
-        #region For Blog post
+        #region Entry fields
 
         private static BlogPostRepo postRepo = new BlogPostRepo();
 
@@ -21,9 +20,7 @@ namespace ProjectH2
         private static ImageCloud BlogImageCloud = new ImageCloud(Street.BlogPost);
         private static LanguageCloud BlogLanguageCloud = new LanguageCloud(Street.BlogPost);
 
-        #endregion
-
-        #region For Framework review
+        
 
         private static FrameworkRevieRepo revieRepo = new FrameworkRevieRepo();
 
@@ -32,9 +29,7 @@ namespace ProjectH2
         private static ImageCloud FrameImageCloud = new ImageCloud(Street.FrameworkReview);
         private static LanguageCloud FrameLanguageCloud = new LanguageCloud(Street.FrameworkReview);
 
-        #endregion
-
-        #region For Reference
+        
 
         private static ReferenceRepo referenceRepo = new ReferenceRepo();
 
