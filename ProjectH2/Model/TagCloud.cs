@@ -14,7 +14,7 @@ namespace ProjectH2.Model
     public class TagCloud
     {
         //Properties
-        public Street street { get; set; }
+        public Street Streets { get; set; }
 
         //Tag list with tag for specifk post
         public List<Tag> TagList => tagList;
@@ -36,6 +36,15 @@ namespace ProjectH2.Model
         /// <param name="name"></param>
         /// <returns></returns>
         public Tag FindTag(Tag tag, string name) { tag = TagList.Find(x => x.Name == name); return tag; }
+
+        /// <summary>
+        /// Constructer for street
+        /// </summary>
+        /// <param name="street"></param>
+        public TagCloud(Street street)
+        {
+            Streets = street;
+        }
     }
 
     public class Tag

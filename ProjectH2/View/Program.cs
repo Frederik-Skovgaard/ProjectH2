@@ -8,33 +8,42 @@ namespace ProjectH2
 {
     class Program
     {
+        //Repository classes
         private static CloudRepo cloud = new CloudRepo();
         private static EntryRepo entryRepo = new EntryRepo();
 
-        //For Blog post
+        #region For Blog post
+
         private static BlogPostRepo postRepo = new BlogPostRepo();
 
-        private static TagCloud BlogTagCloud = new TagCloud();
-        private static FileCloud BlogFileCloud = new FileCloud();
-        private static ImageCloud BlogImageCloud = new ImageCloud();
-        private static LanguageCloud BlogLanguageCloud = new LanguageCloud();
+        private static TagCloud BlogTagCloud = new TagCloud(Street.BlogPost);
+        private static FileCloud BlogFileCloud = new FileCloud(Street.BlogPost);
+        private static ImageCloud BlogImageCloud = new ImageCloud(Street.BlogPost);
+        private static LanguageCloud BlogLanguageCloud = new LanguageCloud(Street.BlogPost);
 
-        //For Framework review
+        #endregion
+
+        #region For Framework review
+
         private static FrameworkRevieRepo revieRepo = new FrameworkRevieRepo();
 
-        private static TagCloud FrameTagCloud = new TagCloud();
-        private static FileCloud FrameFileCloud = new FileCloud();
-        private static ImageCloud FrameImageCloud = new ImageCloud();
-        private static LanguageCloud FrameLanguageCloud = new LanguageCloud();
+        private static TagCloud FrameTagCloud = new TagCloud(Street.FrameworkReview);
+        private static FileCloud FrameFileCloud = new FileCloud(Street.FrameworkReview);
+        private static ImageCloud FrameImageCloud = new ImageCloud(Street.FrameworkReview);
+        private static LanguageCloud FrameLanguageCloud = new LanguageCloud(Street.FrameworkReview);
 
-        //For Reference
+        #endregion
+
+        #region For Reference
+
         private static ReferenceRepo referenceRepo = new ReferenceRepo();
 
-        private static TagCloud RefTagCloud = new TagCloud();
-        private static FileCloud RefFileCloud = new FileCloud();
-        private static ImageCloud RefImageCloud = new ImageCloud();
-        private static LanguageCloud RefLanguageCloud = new LanguageCloud();
+        private static TagCloud RefTagCloud = new TagCloud(Street.Reference);
+        private static FileCloud RefFileCloud = new FileCloud(Street.Reference);
+        private static ImageCloud RefImageCloud = new ImageCloud(Street.Reference);
+        private static LanguageCloud RefLanguageCloud = new LanguageCloud(Street.Reference);
 
+        #endregion
 
 
         static async Task Main(string[] args)
@@ -47,6 +56,7 @@ namespace ProjectH2
 
             //Contact
             Contact contact = new Contact("Frederik", "Skovgaard", "Gadde", 13, "53 53 53 53", "Email@gmail.com", "www.linkind.com");
+
 
             #region Blog post test
 
@@ -73,6 +83,7 @@ namespace ProjectH2
             BlogPost blog = new BlogPost("Unes Anus", "BigTitle", DateTime.Now, DateTime.Today, BlogFileCloud, BlogImageCloud, BlogTagCloud, BlogLanguageCloud, true);
             postRepo.SaveBlogPost(blog, blog.Image, blog.File, blog.Language, blog.Tag, contact);
             #endregion
+
 
             #region Framework review Test
 

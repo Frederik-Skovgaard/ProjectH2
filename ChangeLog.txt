@@ -3,14 +3,16 @@
 This project is a bank-end only developer blog/Portfolio, for my H2 OOP project.
 The Main method runs a string of hard coded methods to show that the methods work & how they work.
 
-# Links
-### Change Log Updates
-[Version 1.](#Version_1.)
-[Version 1.2.](#Version_1.2.)
-[Version 1.3.](#Version_1.3.)
-[Version 1.4.](#Version_1.4.)
-[Version 1.5.](#Version_1.5.)
-[Version 1.6.](#Version_1.6.)
+# Shortcuts
+*  Change Log Updates
+	- [Version 1.6.](#Version-1.6.)
+	- [Version 1.5.](#Version-1.5.)
+	- [Version 1.4.](#Version-1.4.)
+	- [Version 1.3.](#Version-1.3.)
+	- [Version 1.2.](#Version-1.2.)
+	- [Version 1.0](#Version-1.)
+* [Class diagram](https://app.diagrams.net/#G1YDH7G9gURiJThr99NOu2rqQiLgCLG_iF)
+
 
 ## Methods used
 ### EntryDelete()
@@ -44,11 +46,11 @@ The Main method runs a string of hard coded methods to show that the methods wor
 All notable changes to this project will be documented in this file.
 
 # [Unreleased]
-## Version 1.6. - ??-??-??
+## Version 1.6. - 01-09-21 [GitLink](https://github.com/CarfloHD/ProjectH2/compare/Version-1.5...Version-1.6)
 ### Changed
-- [ ] Read method from Tag, Image, File & Language change so they don't add deleted entrys to there list
+- [x] Read method from Tag, Image, File & Language change so they don't add deleted entrys to there list
 
-## Version 1.5. - 31-08-21
+## Version 1.5. - 31-08-21 [GitLink](https://github.com/CarfloHD/ProjectH2/compare/Version-1.4...Version-1.5)
 ### Added
 - [x] Add method for deleting entry
 - [x] Add method for updating entry 
@@ -56,14 +58,14 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - [x] Read xml file asynchronously
 
-## Version 1.4. - 30-08-21
+## Version 1.4. - 30-08-21 [GitLink](https://github.com/CarfloHD/ProjectH2/compare/Version1.3...Version-1.4)
 ### Added
 - [x] Method for writing FrameworkReview to xml file
 - [x] Method for writing Reference to xml file
 - [x] Adding ID to entrys
 - [x] Method for reading only entry id  
 
-## Version 1.3. - 27-08-21
+## Version 1.3. - 27-08-21 [GitLink](https://github.com/CarfloHD/ProjectH2/compare/Version-1.2...Version1.3)
 ### Added
 - [x]  Add EntryRepo, BlogPostRepo, FrameworkReview & Reference Class
 - [x] Add method for writing BlogPostto xml file
@@ -73,7 +75,9 @@ All notable changes to this project will be documented in this file.
 
 
 
-## Version 1.2. - 25-08-21
+
+## Version 1.2. - 25-08-21 [GitLink](https://github.com/CarfloHD/ProjectH2/compare/Version_1...Version-1.2) 
+
 ### Added
 - [x] Add SaveText() Method for writing created Tag, Image, Language &/Or File.
 
@@ -82,7 +86,7 @@ All notable changes to this project will be documented in this file.
 - [x] Entry properties to use Tag, Image, Language & File cloud instead.
 - [x] Change Entry constructor to  add option for Image & File.
 
-## Version 1. - 24-08-2021
+## Version 1. - 24-08-2021 [GitLink](https://github.com/CarfloHD/ProjectH2/releases/tag/Version_1)
 ### Added
 - [x] Add properties to tag & tag cloud
 - [x] Add properties on language & language cloud

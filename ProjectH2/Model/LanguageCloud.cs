@@ -12,7 +12,7 @@ namespace ProjectH2.Model
     public class LanguageCloud
     {
         //Properties
-        public Street Street { get; set; }
+        public Street Streets { get; set; }
 
         //Language list with specific language for post
         public List<Language> Languages => languageList;
@@ -34,6 +34,15 @@ namespace ProjectH2.Model
         /// <param name="name"></param>
         /// <returns></returns>
         public Language FindLanguage(Language language, string name) { language = Languages.Find(x => x.Name == name); return language; }
+
+        /// <summary>
+        /// Constructer for street
+        /// </summary>
+        /// <param name="street"></param>
+        public LanguageCloud(Street street)
+        {
+            Streets = street;
+        }
     }
 
 

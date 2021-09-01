@@ -21,7 +21,7 @@ namespace ProjectTesting
         public void TagCloudCounter()
         {
             //Arrange
-            TagCloud tagCloud = new TagCloud();
+            TagCloud tagCloud = new TagCloud(Street.BlogPost);
 
             for (int i = 0; i < 100; i++)
             {
@@ -36,14 +36,17 @@ namespace ProjectTesting
             Assert.Equal(100, result);
         }
 
+        /// <summary>
+        /// Create a blog post & then read the blog post
+        /// </summary>
         [Fact]
         public void ReadXML()
         {
             //Arrange
-            TagCloud BlogTagCloud = new TagCloud();
-            FileCloud BlogFileCloud = new FileCloud();
-            ImageCloud BlogImageCloud = new ImageCloud();
-            LanguageCloud BlogLanguageCloud = new LanguageCloud();
+            TagCloud BlogTagCloud = new TagCloud(Street.BlogPost);
+            FileCloud BlogFileCloud = new FileCloud(Street.BlogPost);
+            ImageCloud BlogImageCloud = new ImageCloud(Street.BlogPost);
+            LanguageCloud BlogLanguageCloud = new LanguageCloud(Street.BlogPost);
             BlogPostRepo postRepo = new BlogPostRepo();
 
             //Contact
@@ -112,6 +115,31 @@ namespace ProjectTesting
             //Assert
             Assert.Equal("New HeadLine", result);
 
+        }
+
+        /// <summary>
+        /// Delete entry & read to see if it is deleteded
+        /// </summary>
+        [Fact]
+        public void EntryDelete()
+        {
+            //Arrange
+            entryRepo.EntryDelete(1);
+
+            string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
+
+            XDocument xdoc = XDocument.Load(line);
+
+            XElement entry = xdoc.Root.Elements("BlogPost")
+                .FirstOrDefault(w => (int)w.Attribute("ID") == 1);
+
+
+            //Act
+            string result = entry.Element("Active").Value;
+
+
+            //Assert
+            Assert.Equal("False", result);
         }
     }
 }

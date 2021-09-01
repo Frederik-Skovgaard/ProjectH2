@@ -14,7 +14,7 @@ namespace ProjectH2.Model
     public class FileCloud
     {
         //File
-        public Street Street { get; set; }
+        public Street Streets { get; set; }
 
 
         //File list with files for specific post
@@ -37,7 +37,14 @@ namespace ProjectH2.Model
         /// <returns></returns>
         public Files FindFile(string name) { Files file = FileList.Find(x => x.Name == name); return file; }
 
-        
+        /// <summary>
+        /// Constructer for street
+        /// </summary>
+        /// <param name="street"></param>
+        public FileCloud(Street street)
+        {
+            Streets = street;
+        }
 
     }
 

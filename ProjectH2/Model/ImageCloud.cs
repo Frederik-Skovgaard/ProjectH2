@@ -13,7 +13,7 @@ namespace ProjectH2.Model
     public class ImageCloud
     {
        //Properties
-        public Street street { get; set; }
+        public Street Streets { get; set; }
 
         //Image list with images for specifk post
         public List<Image> ImageList => imageList;
@@ -37,7 +37,15 @@ namespace ProjectH2.Model
         /// <returns></returns>
         public Image FindImage(Image image, string name_) { image = ImageList.Find(x => x.Name == name_); return image; }
 
-        
+        /// <summary>
+        /// Constructer for street
+        /// </summary>
+        /// <param name="street"></param>
+        public ImageCloud(Street street)
+        {
+            Streets = street;
+        }
+
     }
 
 
