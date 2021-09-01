@@ -49,6 +49,7 @@ namespace ProjectH2
             Contact contact = new Contact("Frederik", "Skovgaard", "Gadde", 13, "53 53 53 53", "Email@gmail.com", "www.linkind.com");
 
             #region Blog post test
+
             //Create & add tag to list
             Tag blogTag = new Tag("BlogName", "BlogDescription");
             BlogTagCloud.AddTag(blogTag);
@@ -72,6 +73,7 @@ namespace ProjectH2
             BlogPost blog = new BlogPost("Unes Anus", "BigTitle", DateTime.Now, DateTime.Today, BlogFileCloud, BlogImageCloud, BlogTagCloud, BlogLanguageCloud, true);
             postRepo.SaveBlogPost(blog, blog.Image, blog.File, blog.Language, blog.Tag, contact);
             #endregion
+
             #region Framework review Test
 
             //Create & add tag to list
