@@ -95,7 +95,7 @@ namespace ProjectTesting
         public void UpdateXML()
         {
             //Arrange
-            entryRepo.EntryUpdate(1, "HeadLine");
+            entryRepo.EntryUpdate(1, "HeadLine", "New HeadLine");
 
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 

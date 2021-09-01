@@ -8,6 +8,7 @@ using System.Xml.Linq;
 
 namespace ProjectH2.Repository
 {
+
     public class EntryRepo
     {
         public int ID => id;
@@ -21,6 +22,7 @@ namespace ProjectH2.Repository
         {
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
             XDocument doc = XDocument.Load(line);
+            
 
             //Max ID list
             List<int> idList = new List<int>();
@@ -75,7 +77,7 @@ namespace ProjectH2.Repository
             }
             else
             {
-                Console.WriteLine("Confussed screaming");
+                Console.WriteLine("Entry dosen't exists...");
                 xdoc.Save(line);
             }
         }
@@ -85,7 +87,7 @@ namespace ProjectH2.Repository
         /// Method for updating
         /// </summary>
         /// <param name="identification"></param>
-        public void EntryUpdate(int identification, string element)
+        public void EntryUpdate(int identification, string element, string input)
         {
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
@@ -96,7 +98,7 @@ namespace ProjectH2.Repository
 
             if (entry != null)
             {
-                entry.Element(element).Value = "New HeadLine";
+                entry.Element(element).Value = input;
                 xdoc.Save(line);
             }
             else

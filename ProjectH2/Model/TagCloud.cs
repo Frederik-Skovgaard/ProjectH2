@@ -73,18 +73,80 @@ namespace ProjectH2.Model
 
             XDocument xdoc = await LoadAsync(line);
 
-            IEnumerable<XElement> tagXML = xdoc.Root.Descendants("Tag");
+            //List of all tags
+            IEnumerable<XElement> blog = xdoc.Root.Descendants("BlogPost");
+            IEnumerable<XElement> fram = xdoc.Root.Descendants("FrameworkReview");
+            IEnumerable<XElement> refe = xdoc.Root.Descendants("Reference");
 
-
-            foreach (XElement tag in tagXML)
+            //Foreach tag in Blog post
+            foreach (XElement tag in blog)
             {
-                string tagName = tag.Element("Name").Value;
-                string tagDesc = tag.Element("Description").Value;
+                if (tag.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = tag.Descendants("Tag");
 
-                tagList.Add(new Tag(tagName, tagDesc));
+                    foreach (XElement xe in x)
+                    {
+                        string tagName = xe.Element("TagName").Value;
+                        string tagDesc = xe.Element("TagDescription").Value;
 
-                xdoc.Save(line);
+                        tagList.Add(new Tag(tagName, tagDesc));
+
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
             }
+
+            //Foreach tag in Framework review
+            foreach (XElement tag in fram)
+            {
+                if (tag.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = tag.Descendants("Tag");
+
+                    foreach (XElement xe in x)
+                    {
+                        string tagName = xe.Element("TagName").Value;
+                        string tagDesc = xe.Element("TagDescription").Value;
+
+                        tagList.Add(new Tag(tagName, tagDesc));
+
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
+            }
+
+            //Foreach tag in Reference
+            foreach (XElement tag in refe)
+            {
+                if (tag.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = tag.Descendants("Tag");
+
+                    foreach (XElement xe in x)
+                    {
+                        string tagName = xe.Element("TagName").Value;
+                        string tagDesc = xe.Element("TagDescription").Value;
+
+                        tagList.Add(new Tag(tagName, tagDesc));
+
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
+            }
+
         }
 
         /// <summary>

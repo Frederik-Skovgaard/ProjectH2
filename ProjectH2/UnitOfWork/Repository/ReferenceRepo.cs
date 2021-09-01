@@ -58,23 +58,23 @@ namespace ProjectH2.Repository
             XmlNode nodeContact = xdoc1.CreateElement("Contact");
             nodeReference.AppendChild(nodeContact);
 
-            XmlNode nodeContactName = xdoc1.CreateElement("Name");
+            XmlNode nodeContactName = xdoc1.CreateElement("ContactName");
             nodeContactName.InnerText = contact.FullName;
             nodeContact.AppendChild(nodeContactName);
 
-            XmlNode nodeContactAddress = xdoc1.CreateElement("Address");
+            XmlNode nodeContactAddress = xdoc1.CreateElement("ContactAddress");
             nodeContactAddress.InnerText = contact.Address;
             nodeContact.AppendChild(nodeContactAddress);
 
-            XmlNode nodeContactPhone = xdoc1.CreateElement("Phone");
+            XmlNode nodeContactPhone = xdoc1.CreateElement("ContactPhone");
             nodeContactPhone.InnerText = contact.Phone;
             nodeContact.AppendChild(nodeContactPhone);
 
-            XmlNode nodeContactEmail = xdoc1.CreateElement("Email");
+            XmlNode nodeContactEmail = xdoc1.CreateElement("ContactEmail");
             nodeContactEmail.InnerText = contact.Email;
             nodeContact.AppendChild(nodeContactEmail);
 
-            XmlNode nodeContactLinkedin = xdoc1.CreateElement("Linkedin");
+            XmlNode nodeContactLinkedin = xdoc1.CreateElement("ContactLinkedin");
             nodeContactLinkedin.InnerText = contact.Linkedin;
             nodeContact.AppendChild(nodeContactLinkedin);
 
@@ -88,7 +88,7 @@ namespace ProjectH2.Repository
                 XmlNode nodeFile = xdoc1.CreateElement("File");
                 nodeFileCloud.AppendChild(nodeFile);
 
-                XmlNode nodeFileName = xdoc1.CreateElement("Name");
+                XmlNode nodeFileName = xdoc1.CreateElement("FileName");
                 nodeFileName.InnerText = Cloud.Name;
                 nodeFile.AppendChild(nodeFileName);
 
@@ -103,15 +103,15 @@ namespace ProjectH2.Repository
                 XmlNode nodeImage = xdoc1.CreateElement("Image");
                 nodeImageCloud.AppendChild(nodeImage);
 
-                XmlNode nodeImageName = xdoc1.CreateElement("Name");
+                XmlNode nodeImageName = xdoc1.CreateElement("ImageName");
                 nodeImageName.InnerText = Cloud.Name;
                 nodeImage.AppendChild(nodeImageName);
 
-                XmlNode nodeImageDescription = xdoc1.CreateElement("Description");
+                XmlNode nodeImageDescription = xdoc1.CreateElement("ImageDescription");
                 nodeImageDescription.InnerText = Cloud.Description;
                 nodeImage.AppendChild(nodeImageDescription);
 
-                XmlNode nodeImagePath = xdoc1.CreateElement("Path");
+                XmlNode nodeImagePath = xdoc1.CreateElement("ImagePath");
                 nodeImagePath.InnerText = Cloud.Path;
                 nodeImage.AppendChild(nodeImagePath);
             }
@@ -122,11 +122,11 @@ namespace ProjectH2.Repository
                 XmlNode nodeTag = xdoc1.CreateElement("Tag");
                 nodeTagCloud.AppendChild(nodeTag);
 
-                XmlNode nodeName = xdoc1.CreateElement("Name");
+                XmlNode nodeName = xdoc1.CreateElement("TagName");
                 nodeName.InnerText = Cloud.Name;
                 nodeTag.AppendChild(nodeName);
 
-                XmlNode nodeDescription = xdoc1.CreateElement("Description");
+                XmlNode nodeDescription = xdoc1.CreateElement("TagDescription");
                 nodeDescription.InnerText = Cloud.Description;
                 nodeTag.AppendChild(nodeDescription);
             }
@@ -137,7 +137,7 @@ namespace ProjectH2.Repository
                 XmlNode nodeLanguage = xdoc1.CreateElement("EntryLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
-                XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
+                XmlNode nodeLanguageName = xdoc1.CreateElement("EntryLanguageName");
                 nodeLanguageName.InnerText = Cloud.Name;
                 nodeLanguage.AppendChild(nodeLanguageName);
             }
@@ -187,23 +187,23 @@ namespace ProjectH2.Repository
             XmlNode nodeContact = xdoc1.CreateElement("Contact");
             nodeReference.AppendChild(nodeContact);
 
-            XmlNode nodeContactName = xdoc1.CreateElement("Name");
+            XmlNode nodeContactName = xdoc1.CreateElement("ContactName");
             nodeContactName.InnerText = contact.FullName;
             nodeContact.AppendChild(nodeContactName);
 
-            XmlNode nodeContactAddress = xdoc1.CreateElement("Address");
+            XmlNode nodeContactAddress = xdoc1.CreateElement("ContactAddress");
             nodeContactAddress.InnerText = contact.Address;
             nodeContact.AppendChild(nodeContactAddress);
 
-            XmlNode nodeContactPhone = xdoc1.CreateElement("Phone");
+            XmlNode nodeContactPhone = xdoc1.CreateElement("ContactPhone");
             nodeContactPhone.InnerText = contact.Phone;
             nodeContact.AppendChild(nodeContactPhone);
 
-            XmlNode nodeContactEmail = xdoc1.CreateElement("Email");
+            XmlNode nodeContactEmail = xdoc1.CreateElement("ContactEmail");
             nodeContactEmail.InnerText = contact.Email;
             nodeContact.AppendChild(nodeContactEmail);
 
-            XmlNode nodeContactLinkedin = xdoc1.CreateElement("Linkedin");
+            XmlNode nodeContactLinkedin = xdoc1.CreateElement("ContactLinkedin");
             nodeContactLinkedin.InnerText = contact.Linkedin;
             nodeContact.AppendChild(nodeContactLinkedin);
 
@@ -217,7 +217,7 @@ namespace ProjectH2.Repository
                 XmlNode nodeFile = xdoc1.CreateElement("File");
                 nodeFileCloud.AppendChild(nodeFile);
 
-                XmlNode nodeFileName = xdoc1.CreateElement("Name");
+                XmlNode nodeFileName = xdoc1.CreateElement("FileName");
                 nodeFileName.InnerText = Cloud.Name;
                 nodeFile.AppendChild(nodeFileName);
 
@@ -232,11 +232,11 @@ namespace ProjectH2.Repository
                 XmlNode nodeTag = xdoc1.CreateElement("Tag");
                 nodeTagCloud.AppendChild(nodeTag);
 
-                XmlNode nodeName = xdoc1.CreateElement("Name");
+                XmlNode nodeName = xdoc1.CreateElement("TagName");
                 nodeName.InnerText = Cloud.Name;
                 nodeTag.AppendChild(nodeName);
 
-                XmlNode nodeDescription = xdoc1.CreateElement("Description");
+                XmlNode nodeDescription = xdoc1.CreateElement("TagDescription");
                 nodeDescription.InnerText = Cloud.Description;
                 nodeTag.AppendChild(nodeDescription);
             }
@@ -247,10 +247,11 @@ namespace ProjectH2.Repository
                 XmlNode nodeLanguage = xdoc1.CreateElement("EntryLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
-                XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
+                XmlNode nodeLanguageName = xdoc1.CreateElement("EntryLanguageName");
                 nodeLanguageName.InnerText = Cloud.Name;
                 nodeLanguage.AppendChild(nodeLanguageName);
             }
+
 
             xdoc1.Save(line);
         }
@@ -297,23 +298,23 @@ namespace ProjectH2.Repository
             XmlNode nodeContact = xdoc1.CreateElement("Contact");
             nodeReference.AppendChild(nodeContact);
 
-            XmlNode nodeContactName = xdoc1.CreateElement("Name");
+            XmlNode nodeContactName = xdoc1.CreateElement("ContactName");
             nodeContactName.InnerText = contact.FullName;
             nodeContact.AppendChild(nodeContactName);
 
-            XmlNode nodeContactAddress = xdoc1.CreateElement("Address");
+            XmlNode nodeContactAddress = xdoc1.CreateElement("ContactAddress");
             nodeContactAddress.InnerText = contact.Address;
             nodeContact.AppendChild(nodeContactAddress);
 
-            XmlNode nodeContactPhone = xdoc1.CreateElement("Phone");
+            XmlNode nodeContactPhone = xdoc1.CreateElement("ContactPhone");
             nodeContactPhone.InnerText = contact.Phone;
             nodeContact.AppendChild(nodeContactPhone);
 
-            XmlNode nodeContactEmail = xdoc1.CreateElement("Email");
+            XmlNode nodeContactEmail = xdoc1.CreateElement("ContactEmail");
             nodeContactEmail.InnerText = contact.Email;
             nodeContact.AppendChild(nodeContactEmail);
 
-            XmlNode nodeContactLinkedin = xdoc1.CreateElement("Linkedin");
+            XmlNode nodeContactLinkedin = xdoc1.CreateElement("ContactLinkedin");
             nodeContactLinkedin.InnerText = contact.Linkedin;
             nodeContact.AppendChild(nodeContactLinkedin);
 
@@ -321,22 +322,21 @@ namespace ProjectH2.Repository
             nodeActive.InnerText = reference.Active.ToString();
             nodeReference.AppendChild(nodeActive);
 
-
             //Image
             foreach (Image Cloud in image.ImageList)
             {
                 XmlNode nodeImage = xdoc1.CreateElement("Image");
                 nodeImageCloud.AppendChild(nodeImage);
 
-                XmlNode nodeImageName = xdoc1.CreateElement("Name");
+                XmlNode nodeImageName = xdoc1.CreateElement("ImageName");
                 nodeImageName.InnerText = Cloud.Name;
                 nodeImage.AppendChild(nodeImageName);
 
-                XmlNode nodeImageDescription = xdoc1.CreateElement("Description");
+                XmlNode nodeImageDescription = xdoc1.CreateElement("ImageDescription");
                 nodeImageDescription.InnerText = Cloud.Description;
                 nodeImage.AppendChild(nodeImageDescription);
 
-                XmlNode nodeImagePath = xdoc1.CreateElement("Path");
+                XmlNode nodeImagePath = xdoc1.CreateElement("ImagePath");
                 nodeImagePath.InnerText = Cloud.Path;
                 nodeImage.AppendChild(nodeImagePath);
             }
@@ -347,11 +347,11 @@ namespace ProjectH2.Repository
                 XmlNode nodeTag = xdoc1.CreateElement("Tag");
                 nodeTagCloud.AppendChild(nodeTag);
 
-                XmlNode nodeName = xdoc1.CreateElement("Name");
+                XmlNode nodeName = xdoc1.CreateElement("TagName");
                 nodeName.InnerText = Cloud.Name;
                 nodeTag.AppendChild(nodeName);
 
-                XmlNode nodeDescription = xdoc1.CreateElement("Description");
+                XmlNode nodeDescription = xdoc1.CreateElement("TagDescription");
                 nodeDescription.InnerText = Cloud.Description;
                 nodeTag.AppendChild(nodeDescription);
             }
@@ -362,10 +362,11 @@ namespace ProjectH2.Repository
                 XmlNode nodeLanguage = xdoc1.CreateElement("EntryLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
-                XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
+                XmlNode nodeLanguageName = xdoc1.CreateElement("EntryLanguageName");
                 nodeLanguageName.InnerText = Cloud.Name;
                 nodeLanguage.AppendChild(nodeLanguageName);
             }
+
 
             xdoc1.Save(line);
         }
@@ -409,23 +410,23 @@ namespace ProjectH2.Repository
             XmlNode nodeContact = xdoc1.CreateElement("Contact");
             nodeReference.AppendChild(nodeContact);
 
-            XmlNode nodeContactName = xdoc1.CreateElement("Name");
+            XmlNode nodeContactName = xdoc1.CreateElement("ContactName");
             nodeContactName.InnerText = contact.FullName;
             nodeContact.AppendChild(nodeContactName);
 
-            XmlNode nodeContactAddress = xdoc1.CreateElement("Address");
+            XmlNode nodeContactAddress = xdoc1.CreateElement("ContactAddress");
             nodeContactAddress.InnerText = contact.Address;
             nodeContact.AppendChild(nodeContactAddress);
 
-            XmlNode nodeContactPhone = xdoc1.CreateElement("Phone");
+            XmlNode nodeContactPhone = xdoc1.CreateElement("ContactPhone");
             nodeContactPhone.InnerText = contact.Phone;
             nodeContact.AppendChild(nodeContactPhone);
 
-            XmlNode nodeContactEmail = xdoc1.CreateElement("Email");
+            XmlNode nodeContactEmail = xdoc1.CreateElement("ContactEmail");
             nodeContactEmail.InnerText = contact.Email;
             nodeContact.AppendChild(nodeContactEmail);
 
-            XmlNode nodeContactLinkedin = xdoc1.CreateElement("Linkedin");
+            XmlNode nodeContactLinkedin = xdoc1.CreateElement("ContactLinkedin");
             nodeContactLinkedin.InnerText = contact.Linkedin;
             nodeContact.AppendChild(nodeContactLinkedin);
 
@@ -439,11 +440,11 @@ namespace ProjectH2.Repository
                 XmlNode nodeTag = xdoc1.CreateElement("Tag");
                 nodeTagCloud.AppendChild(nodeTag);
 
-                XmlNode nodeName = xdoc1.CreateElement("Name");
+                XmlNode nodeName = xdoc1.CreateElement("TagName");
                 nodeName.InnerText = Cloud.Name;
                 nodeTag.AppendChild(nodeName);
 
-                XmlNode nodeDescription = xdoc1.CreateElement("Description");
+                XmlNode nodeDescription = xdoc1.CreateElement("TagDescription");
                 nodeDescription.InnerText = Cloud.Description;
                 nodeTag.AppendChild(nodeDescription);
             }
@@ -454,10 +455,11 @@ namespace ProjectH2.Repository
                 XmlNode nodeLanguage = xdoc1.CreateElement("EntryLanguage");
                 nodeLanguageCloud.AppendChild(nodeLanguage);
 
-                XmlNode nodeLanguageName = xdoc1.CreateElement("Name");
+                XmlNode nodeLanguageName = xdoc1.CreateElement("EntryLanguageName");
                 nodeLanguageName.InnerText = Cloud.Name;
                 nodeLanguage.AppendChild(nodeLanguageName);
             }
+
 
             xdoc1.Save(line);
         }

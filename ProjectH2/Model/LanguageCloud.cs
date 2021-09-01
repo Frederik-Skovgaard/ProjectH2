@@ -61,14 +61,73 @@ namespace ProjectH2.Model
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XDocument xdoc = await LoadAsync(line);
-            IEnumerable<XElement> langXML = xdoc.Root.Descendants("EntryLanguage");
 
-            foreach (XElement xElement in langXML)
+            //List of all tags
+            IEnumerable<XElement> blog = xdoc.Root.Descendants("BlogPost");
+            IEnumerable<XElement> fram = xdoc.Root.Descendants("FrameworkReview");
+            IEnumerable<XElement> refe = xdoc.Root.Descendants("Reference");
+
+            //Foreach language in Blog post
+            foreach (XElement xElement in blog)
             {
-                string langName = xElement.Element("Name").Value;
+                if (xElement.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = xElement.Descendants("EntryLanguage");
+                    foreach (XElement xe in x)
+                    {
+                        string langName = xe.Element("EntryLanguageName").Value;
 
-                languageList.Add(new Language(langName));
+                        languageList.Add(new Language(langName));
 
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
+            }
+
+            //Foreach language in Framework review
+            foreach (XElement xElement in fram)
+            {
+                if (xElement.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = xElement.Descendants("EntryLanguage");
+                    foreach (XElement xe in x)
+                    {
+                        string langName = xe.Element("EntryLanguageName").Value;
+
+                        languageList.Add(new Language(langName));
+
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
+            }
+
+            //Foreach language in Reference
+            foreach (XElement xElement in refe)
+            {
+                if (xElement.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = xElement.Descendants("EntryLanguage");
+                    foreach (XElement xe in x)
+                    {
+                        string langName = xe.Element("EntryLanguageName").Value;
+
+                        languageList.Add(new Language(langName));
+
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
             }
         }
 

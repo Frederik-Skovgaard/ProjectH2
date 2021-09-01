@@ -79,16 +79,80 @@ namespace ProjectH2.Model
             string line = @"C:\Users\fred56b8\Source\Repos\ProjectH2\ProjectH2\Model\Cloud.xml";
 
             XDocument xdoc = await LoadAsync(line);
-            IEnumerable<XElement> imageXML = xdoc.Root.Descendants("Image");
 
-            foreach (XElement imagXml in imageXML)
+            //List of all tags
+            IEnumerable<XElement> blog = xdoc.Root.Descendants("BlogPost");
+            IEnumerable<XElement> fram = xdoc.Root.Descendants("FrameworkReview");
+            IEnumerable<XElement> refe = xdoc.Root.Descendants("Reference");
+
+
+            //Foreach image in Blog post
+            foreach (XElement imagXml in blog)
             {
-                string imageName = imagXml.Element("Name").Value;
-                string imageDesc = imagXml.Element("Description").Value;
-                string imagePath = imagXml.Element("Path").Value;
+                if (imagXml.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = imagXml.Descendants("Image");
+                    foreach (XElement xe in x)
+                    {
+                        string imageName = xe.Element("ImageName").Value;
+                        string imageDesc = xe.Element("ImageDescription").Value;
+                        string imagePath = xe.Element("ImagePath").Value;
 
-                imageList.Add(new Image(imageName, imageDesc, imagePath));
+                        imageList.Add(new Image(imageName, imageDesc, imagePath));
 
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
+            }
+
+            //Foreach image in Framework review
+            foreach (XElement imagXml in fram)
+            {
+                if (imagXml.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = imagXml.Descendants("Image");
+                    foreach (XElement xe in x)
+                    {
+                        string imageName = xe.Element("ImageName").Value;
+                        string imageDesc = xe.Element("ImageDescription").Value;
+                        string imagePath = xe.Element("ImagePath").Value;
+
+                        imageList.Add(new Image(imageName, imageDesc, imagePath));
+
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
+            }
+
+            //Foreach image in Reference
+            foreach (XElement imagXml in refe)
+            {
+                if (imagXml.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = imagXml.Descendants("Image");
+                    foreach (XElement xe in x)
+                    {
+                        string imageName = xe.Element("ImageName").Value;
+                        string imageDesc = xe.Element("ImageDescription").Value;
+                        string imagePath = xe.Element("ImagePath").Value;
+
+                        imageList.Add(new Image(imageName, imageDesc, imagePath));
+
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
             }
         }
 

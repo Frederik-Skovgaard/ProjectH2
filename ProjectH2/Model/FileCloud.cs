@@ -112,15 +112,78 @@ namespace ProjectH2.Model
 
             XDocument xdoc = await LoadAsync(line);
 
-            IEnumerable<XElement> filXML = xdoc.Root.Descendants("File");
+            //List of all tags
+            IEnumerable<XElement> blog = xdoc.Root.Descendants("BlogPost");
+            IEnumerable<XElement> fram = xdoc.Root.Descendants("FrameworkReview");
+            IEnumerable<XElement> refe = xdoc.Root.Descendants("Reference");
 
-            foreach (XElement filXml in filXML)
+            //Foreach file in Blog post
+            foreach (XElement filXml in blog)
             {
-                string fileName = filXml.Element("Name").Value;
-                string fileMD5 = filXml.Element("MD5").Value;
+                if (filXml.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = filXml.Descendants("File");
 
-                filesList.Add(new Files(fileName, fileMD5));
+                    foreach (XElement xe in x)
+                    {
+                        string fileName = xe.Element("FileName").Value;
+                        string fileMD5 = xe.Element("MD5").Value;
 
+                        filesList.Add(new Files(fileName, fileMD5));
+
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                } 
+            }
+
+            //Foreach file in Framework review
+            foreach (XElement filXml in blog)
+            {
+                if (filXml.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = filXml.Descendants("File");
+
+                    foreach (XElement xe in x)
+                    {
+                        string fileName = xe.Element("FileName").Value;
+                        string fileMD5 = xe.Element("MD5").Value;
+
+                        filesList.Add(new Files(fileName, fileMD5));
+
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
+            }
+
+            //Foreach file in Reference
+            foreach (XElement filXml in blog)
+            {
+                if (filXml.Element("Active").Value != "False")
+                {
+                    IEnumerable<XElement> x = filXml.Descendants("File");
+
+                    foreach (XElement xe in x)
+                    {
+                        string fileName = xe.Element("FileName").Value;
+                        string fileMD5 = xe.Element("MD5").Value;
+
+                        filesList.Add(new Files(fileName, fileMD5));
+
+                        xdoc.Save(line);
+                    }
+                }
+                else
+                {
+                    xdoc.Save(line);
+                }
             }
         }
 

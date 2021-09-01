@@ -3,77 +3,123 @@
   <BlogPost ID="1">
     <HeadLine>New HeadLine</HeadLine>
     <Text>Unes Anus</Text>
-    <StartDate>01-09-2021 08:32:56</StartDate>
+    <StartDate>01-09-2021 09:26:01</StartDate>
     <EndDate>01-09-2021 00:00:00</EndDate>
     <FileCloud>
       <File>
-        <Name>BlogName</Name>
+        <FileName>BlogName</FileName>
         <MD5>bbcd8ebc6f943f05c9ac94b34f768b39</MD5>
       </File>
     </FileCloud>
     <ImageCloud>
       <Image>
-        <Name>BlogName</Name>
-        <Description>BlogDescription</Description>
-        <Path>F:\</Path>
+        <ImageName>BlogName</ImageName>
+        <ImageDescription>BlogDescription</ImageDescription>
+        <ImagePath>F:\</ImagePath>
       </Image>
     </ImageCloud>
     <TagCloud>
       <Tag>
-        <Name>BlogName</Name>
-        <Description>BlogDescription</Description>
+        <TagName>BlogName</TagName>
+        <TagDescription>BlogDescription</TagDescription>
       </Tag>
     </TagCloud>
     <LanguageCloud>
       <EntryLanguage>
-        <Name>BlogC#</Name>
+        <EntryLanguageName>BlogC#</EntryLanguageName>
       </EntryLanguage>
     </LanguageCloud>
     <Contact>
-      <Name>Frederik Skovgaard</Name>
-      <Address>Gadde, 13</Address>
-      <Phone>53 53 53 53</Phone>
-      <Email>Email@gmail.com</Email>
-      <Linkedin>www.linkind.com</Linkedin>
+      <ContacatName>Frederik Skovgaard</ContacatName>
+      <ContacatAddress>Gadde, 13</ContacatAddress>
+      <ContacatPhone>53 53 53 53</ContacatPhone>
+      <ContacatEmail>Email@gmail.com</ContacatEmail>
+      <ContacatLinkedin>www.linkind.com</ContacatLinkedin>
     </Contact>
-    <Active>True</Active>
+    <Active>False</Active>
   </BlogPost>
-  <BlogPost ID="2">
-    <HeadLine>BigTitle</HeadLine>
-    <Text>Unes Anus</Text>
-    <StartDate>01-09-2021 08:33:09</StartDate>
-    <EndDate>01-09-2021 00:00:00</EndDate>
+  <FrameworkReview ID="2">
+    <Text>Text</Text>
+    <NummberOfStars>5</NummberOfStars>
+    <Link>www.link.dk</Link>
     <FileCloud>
       <File>
-        <Name>BlogName</Name>
-        <MD5>8e6423b5e406b33844b63c60589090ac</MD5>
+        <FileName>FrameName</FileName>
+        <MD5>081397bbb3288b202ab7d9d1e6a9e28e</MD5>
       </File>
     </FileCloud>
     <ImageCloud>
       <Image>
-        <Name>BlogName</Name>
-        <Description>BlogDescription</Description>
-        <Path>F:\</Path>
+        <ImageName>FrameName</ImageName>
+        <ImageDescription>FrameDescription</ImageDescription>
+        <ImagePath>FramePath</ImagePath>
       </Image>
     </ImageCloud>
     <TagCloud>
       <Tag>
-        <Name>BlogName</Name>
-        <Description>BlogDescription</Description>
+        <TagName>FrameName</TagName>
+        <TagDescription>FrameDescription</TagDescription>
+      </Tag>
+      <Tag>
+        <TagName>FrameName</TagName>
+        <TagDescription>FrameDescription</TagDescription>
       </Tag>
     </TagCloud>
     <LanguageCloud>
       <EntryLanguage>
-        <Name>BlogC#</Name>
+        <EntryLanguageName>FrameC#</EntryLanguageName>
       </EntryLanguage>
     </LanguageCloud>
     <Contact>
-      <Name>Frederik Skovgaard</Name>
-      <Address>Gadde, 13</Address>
-      <Phone>53 53 53 53</Phone>
-      <Email>Email@gmail.com</Email>
-      <Linkedin>www.linkind.com</Linkedin>
+      <ContactName>Frederik Skovgaard</ContactName>
+      <ContactAddress>Gadde, 13</ContactAddress>
+      <ContactPhone>53 53 53 53</ContactPhone>
+      <ContactEmail>Email@gmail.com</ContactEmail>
+      <ContactLinkedin>www.linkind.com</ContactLinkedin>
     </Contact>
     <Active>True</Active>
-  </BlogPost>
+  </FrameworkReview>
+  <Reference ID="3">
+    <Name>RefText</Name>
+    <FileCloud>
+      <File>
+        <FileName>RefName</FileName>
+        <MD5>53d0f64f8ad8f474e8fb5afdd5a23196</MD5>
+      </File>
+    </FileCloud>
+    <ImageCloud>
+      <Image>
+        <ImageName>RefName</ImageName>
+        <ImageDescription>RefDescription</ImageDescription>
+        <ImagePath>RefPath</ImagePath>
+      </Image>
+    </ImageCloud>
+    <TagCloud>
+      <Tag>
+        <TagName>RefName</TagName>
+        <TagDescription>RefDescription</TagDescription>
+      </Tag>
+      <Tag>
+        <TagName>RefName</TagName>
+        <TagDescription>RefDescription</TagDescription>
+      </Tag>
+      <Tag>
+        <TagName>RefName</TagName>
+        <TagDescription>RefDescription</TagDescription>
+      </Tag>
+    </TagCloud>
+    <LanguageCloud>
+      <EntryLanguage>
+        <EntryLanguageName>RefC#</EntryLanguageName>
+      </EntryLanguage>
+    </LanguageCloud>
+    <Contact>
+      <ContactName>Frederik Skovgaard</ContactName>
+      <ContactAddress>Gadde, 13</ContactAddress>
+      <ContactPhone>53 53 53 53</ContactPhone>
+      <ContactEmail>Email@gmail.com</ContactEmail>
+      <ContactLinkedin>www.linkind.com</ContactLinkedin>
+    </Contact>
+    <Active>True</Active>
+  </Reference>
 </Entry>
