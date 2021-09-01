@@ -39,6 +39,7 @@ namespace ProjectH2
 
         static async Task Main(string[] args)
         {
+            //Delete entry with ID 1
             entryRepo.EntryDelete(1);
 
             //Update head line
@@ -47,7 +48,7 @@ namespace ProjectH2
             //Contact
             Contact contact = new Contact("Frederik", "Skovgaard", "Gadde", 13, "53 53 53 53", "Email@gmail.com", "www.linkind.com");
 
-            //Blog post test
+            #region Blog post test
             //Create & add tag to list
             Tag blogTag = new Tag("BlogName", "BlogDescription");
             BlogTagCloud.AddTag(blogTag);
@@ -70,9 +71,8 @@ namespace ProjectH2
             //Create Blog post & add to xml file
             BlogPost blog = new BlogPost("Unes Anus", "BigTitle", DateTime.Now, DateTime.Today, BlogFileCloud, BlogImageCloud, BlogTagCloud, BlogLanguageCloud, true);
             postRepo.SaveBlogPost(blog, blog.Image, blog.File, blog.Language, blog.Tag, contact);
-
-
-            //Framework review Test
+            #endregion
+            #region Framework review Test
 
             //Create & add tag to list
             Tag frameTag = new Tag("FrameName", "FrameDescription");
@@ -100,9 +100,10 @@ namespace ProjectH2
             //Create a framework review & add to xml file
             FrameworkReview frameworkReview = new FrameworkReview("Text", 5, "www.link.dk", "HeadLine", FrameFileCloud, FrameImageCloud, FrameTagCloud, FrameLanguageCloud, true);
             revieRepo.SaveFrameReview(frameworkReview, frameworkReview.Image, frameworkReview.File, frameworkReview.Language, frameworkReview.Tag, contact);
+            #endregion
 
 
-            //Reference Test
+            #region Reference Test
 
             //Create & add tag to list
             Tag refTag = new Tag("RefName", "RefDescription");
@@ -132,10 +133,10 @@ namespace ProjectH2
             //Create a reference & add to xml file
             Reference reference = new Reference("RefText", RefImageCloud, RefFileCloud, RefTagCloud, RefLanguageCloud, true);
             referenceRepo.SaveReference(reference, reference.Image, reference.File, reference.Language, reference.Tag, contact);
+            #endregion
 
 
-
-            //Read to lists
+            #region Read to lists
 
             //Read xml & add to list
             await cloud.ReadFileToLists(blogTag, blogImage, blogLanguage, blogFiles);
@@ -145,8 +146,10 @@ namespace ProjectH2
 
             //Read xml & add to list
             await cloud.ReadFileToLists(refTag, refImage, refLanguge, refFile);
+            #endregion
 
-            //Resualt
+
+            #region Resualt
 
             //Blog Post lsits check
             Console.Write("Total amount of tags in xml fie: ");
@@ -167,6 +170,7 @@ namespace ProjectH2
             Console.Write("Reference Tag Cloud count: ");
             Console.WriteLine(RefTagCloud.TagList.Count);
             Console.ReadLine();
+            #endregion
         }
     }
 }
