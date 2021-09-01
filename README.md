@@ -6,10 +6,15 @@ The Main method runs a string of hard coded methods to show that the methods wor
 # Links
 ### Change Log Updates
 [Version 1.](#Version_1.)
+
 [Version 1.2.](#Version_1.2.)
+
 [Version 1.3.](#Version_1.3.)
+
 [Version 1.4.](#Version_1.4.)
+
 [Version 1.5.](#Version_1.5.)
+
 [Version 1.6.](#Version_1.6.)
 
 ## Methods used
